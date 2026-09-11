@@ -1,0 +1,620 @@
+/* ==========================================================================
+   DEVFORGE 2026 (DevForge '26)
+   Kollywood Superstar Characters & Arena CSS - Ultra Premium Edition
+   ========================================================================== */
+
+.actors-section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, rgba(26, 17, 43, 0.7) 0%, rgba(7, 6, 11, 0.98) 80%);
+}
+
+.actors-stage-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  perspective: 1200px;
+  margin-top: 40px;
+}
+
+/* 3D Parallax Actor Card with Holographic Sheen */
+.actor-card {
+  position: relative;
+  height: 500px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(165deg, #110d1e 0%, #08060f 100%);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.15s ease-out;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Holographic dynamic foil reflection overlay */
+.actor-foil-glare {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 215, 0, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 65%
+  );
+  transform: rotate(-25deg) translateY(-80px);
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.3;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.actor-card:hover .actor-foil-glare {
+  opacity: 0.9;
+  transform: rotate(-25deg) translateY(40px);
+}
+
+.actor-card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 45px var(--accent-gold-glow);
+}
+
+/* Character Backdrop Graphic / Lighting Plate */
+.actor-visual-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.actor-aura {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.actor-card:hover .actor-aura {
+  opacity: 0.85;
+  transform: scale(1.25);
+}
+
+/* Actor Visual Illustration Container */
+.actor-illustration {
+  position: relative;
+  width: 240px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  margin-bottom: 50px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.actor-card:hover .actor-illustration {
+  transform: translateY(-8px) scale(1.06);
+}
+
+/* -------------------------------------------------------------
+   1. SUPERSTAR RAJINIKANTH (Gold Halo, Crown & Flipping Aviators)
+   ------------------------------------------------------------- */
+.rajini-card .actor-aura {
+  background: radial-gradient(circle, #ffbe1a 0%, #ff8c00 60%, transparent 100%);
+}
+
+.superstar-crest {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunburst-halo {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  animation: haloSpin 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes haloSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.superstar-crown-svg {
+  width: 110px;
+  height: 60px;
+  z-index: 2;
+  margin-bottom: -6px;
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.5));
+  transition: transform 0.4s ease;
+}
+
+.rajini-glasses-wrapper {
+  position: relative;
+  width: 130px;
+  height: 50px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rajini-aviator-svg {
+  width: 130px;
+  height: 50px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.9));
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.rajini-card.triggered .rajini-glasses-wrapper {
+  animation: glassesFlip3D 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.rajini-card.triggered .sunburst-halo {
+  animation: haloSpinFast 0.8s linear infinite;
+}
+
+@keyframes glassesFlip3D {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  30% { transform: translateY(-70px) rotate(360deg) scale(1.35); }
+  70% { transform: translateY(-30px) rotate(720deg) scale(1.15); }
+  100% { transform: translateY(0) rotate(720deg) scale(1); }
+}
+
+@keyframes haloSpinFast {
+  from { transform: rotate(0deg) scale(1.2); }
+  to { transform: rotate(360deg) scale(1.2); }
+}
+
+/* -------------------------------------------------------------
+   2. THALAPATHY VIJAY (Leo Lion Crest & Crimson Flame Emitter)
+   ------------------------------------------------------------- */
+.vijay-card .actor-aura {
+  background: radial-gradient(circle, #ff334b 0%, #e62035 60%, transparent 100%);
+}
+
+.leo-lion-crest {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.leo-lion-svg {
+  width: 160px;
+  height: 160px;
+  filter: drop-shadow(0 6px 18px rgba(255, 51, 75, 0.6));
+  transition: transform 0.4s ease;
+}
+
+.bloody-sweet-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(90deg, #ff334b, #ff7a00);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-top: -12px;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(255, 51, 75, 0.6);
+}
+
+.leo-flame-emitter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+  background: radial-gradient(ellipse at bottom, rgba(255, 51, 75, 0.35) 0%, transparent 75%);
+}
+
+.vijay-card.triggered .leo-lion-crest {
+  animation: vijayRoarExplode 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes vijayRoarExplode {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px #ff334b); }
+  25% { transform: scale(1.2) rotate(-5deg); filter: drop-shadow(0 0 40px #ff7a00); }
+  75% { transform: scale(1.15) rotate(5deg); filter: drop-shadow(0 0 35px #ff334b); }
+}
+
+/* -------------------------------------------------------------
+   3. CHITTI ROBO 2.0 (Neural Faceplate, Scanline, Red Overdrive)
+   ------------------------------------------------------------- */
+.chitti-card .actor-aura {
+  background: radial-gradient(circle, #00f0ff 0%, #008fa8 60%, transparent 100%);
+}
+
+.chitti-head-mech {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chitti-android-svg {
+  width: 150px;
+  height: 160px;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.5));
+  transition: all 0.4s ease;
+}
+
+.robot-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00f0ff, transparent);
+  box-shadow: 0 0 15px #00f0ff;
+  opacity: 0;
+  z-index: 5;
+}
+
+.chitti-card:hover .robot-scanline, .chitti-card.triggered .robot-scanline {
+  opacity: 1;
+  animation: scanLaser 1.5s infinite linear;
+}
+
+@keyframes scanLaser {
+  0% { top: 5%; }
+  100% { top: 85%; }
+}
+
+.chitti-hud-eye {
+  transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+.chitti-card.triggered .chitti-hud-eye {
+  fill: #ff0044 !important;
+  filter: drop-shadow(0 0 16px #ff0044) !important;
+}
+
+.chitti-card.triggered .actor-aura {
+  background: radial-gradient(circle, #ff0044 0%, #8b0000 60%, transparent 100%);
+}
+
+.chitti-card.triggered .chitti-android-svg {
+  filter: drop-shadow(0 0 30px rgba(255, 0, 68, 0.9));
+  transform: scale(1.1);
+}
+
+/* -------------------------------------------------------------
+   4. KAMAL HAASAN / VIKRAM (Tactical Apex Eagle & LCU Smoke)
+   ------------------------------------------------------------- */
+.kamal-card .actor-aura {
+  background: radial-gradient(circle, #a855f7 0%, #3b0764 70%, transparent 100%);
+}
+
+.lcu-commander-crest {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kamal-eagle-svg {
+  width: 160px;
+  height: 160px;
+  filter: drop-shadow(0 6px 20px rgba(168, 85, 247, 0.6));
+  transition: transform 0.4s ease;
+}
+
+.lcu-badge-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-top: -10px;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(168, 85, 247, 0.6);
+}
+
+.kamal-card.triggered .lcu-commander-crest {
+  animation: vikramSmokePulse 0.8s ease-in-out;
+}
+
+@keyframes vikramSmokePulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px #a855f7); }
+  50% { transform: scale(1.15); filter: contrast(1.5) drop-shadow(0 0 35px #c084fc); }
+}
+
+/* -------------------------------------------------------------
+   5. THALA AJITH KUMAR (Mankatha Heist Coin & Speedometer)
+   ------------------------------------------------------------- */
+.ajith-card .actor-aura {
+  background: radial-gradient(circle, #38bdf8 0%, #0369a1 70%, transparent 100%);
+}
+
+.mankatha-racer-crest {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ajith-speedo-svg {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+}
+
+.mankatha-coin-3d {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.coin-face {
+  width: 100%;
+  height: 100%;
+}
+
+.ajith-card.triggered .mankatha-coin-3d {
+  animation: coinFlip3D 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ajith-card.triggered .ajith-speedo-svg {
+  animation: speedoRedline 0.8s ease-in-out;
+}
+
+@keyframes coinFlip3D {
+  0% { transform: translateY(0) rotateY(0deg) scale(1); }
+  50% { transform: translateY(-70px) rotateY(720deg) scale(1.35); }
+  100% { transform: translateY(0) rotateY(1440deg) scale(1); }
+}
+
+@keyframes speedoRedline {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(25deg) scale(1.08); }
+}
+
+/* -------------------------------------------------------------
+   6. SURIYA / ROLEX (Chronos 24 Watch & Time Warp Gears)
+   ------------------------------------------------------------- */
+.suriya-card .actor-aura {
+  background: radial-gradient(circle, #eab308 0%, #854d0e 70%, transparent 100%);
+}
+
+.chronos-24-watch {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suriya-chronos-svg {
+  width: 160px;
+  height: 160px;
+  filter: drop-shadow(0 0 20px rgba(234, 179, 8, 0.5));
+}
+
+.watch-internal-gear {
+  transform-origin: 80px 80px;
+  animation: gearTurn 12s linear infinite;
+}
+
+.minute-hand-svg {
+  transform-origin: 80px 80px;
+  animation: clockTick 6s linear infinite;
+}
+
+.hour-hand-svg {
+  transform-origin: 80px 80px;
+  animation: clockTick 24s linear infinite;
+}
+
+@keyframes gearTurn {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes clockTick {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.suriya-card.triggered .watch-internal-gear {
+  animation: gearTurnFast 0.4s linear infinite;
+}
+
+.suriya-card.triggered .minute-hand-svg {
+  animation: clockTickFast 0.3s linear infinite;
+}
+
+.suriya-card.triggered .suriya-chronos-svg {
+  animation: timeWarpSpin 0.8s ease-in-out;
+}
+
+@keyframes gearTurnFast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes clockTickFast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes timeWarpSpin {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); filter: drop-shadow(0 0 40px #facc15); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+/* -------------------------------------------------------------
+   Actor Info Layer & Bottom Metadata
+   ------------------------------------------------------------- */
+.actor-info-layer {
+  position: relative;
+  z-index: 3;
+  padding: 22px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 6, 11, 0.92) 30%, #07060b 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actor-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actor-tagline-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: rgba(255, 190, 26, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-gold);
+}
+
+.actor-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.actor-cinema-role {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.actor-action-prompt {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hype-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hype-btn:hover:not(.voted) {
+  background: var(--accent-gold);
+  color: #07060b;
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.hype-btn.voted {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #34d399;
+  cursor: default;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.hype-btn.voted:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #34d399;
+}
+
+.hype-btn.voted-shake {
+  animation: votedShake 0.4s ease-in-out;
+}
+
+@keyframes votedShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.hype-counter {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  font-weight: 800;
+}
+
+/* Floating Click Reactions / Whistles */
+.floating-reaction {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.8rem;
+  z-index: 10;
+  animation: floatReaction 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes floatReaction {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-60px) scale(1.4) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-130px) scale(1.8) rotate(-15deg);
+  }
+}

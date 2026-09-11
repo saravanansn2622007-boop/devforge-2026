@@ -1,0 +1,236 @@
+/* ==========================================================================
+   DEVFORGE 2026 (DevForge '26)
+   Cinema Ticket / VIP Pass Stylesheet
+   ========================================================================== */
+
+.ticket-preview-wrapper {
+  position: sticky;
+  top: 100px;
+}
+
+.ticket-container {
+  position: relative;
+  background: linear-gradient(145deg, #161224 0%, #0d0a17 100%);
+  border-radius: 20px;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-gold-glow);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.ticket-container:hover {
+  transform: translateY(-5px) rotate(0.5deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 45px var(--accent-gold-glow);
+}
+
+/* Gold Foil Header */
+.ticket-header {
+  background: var(--accent-gold-gradient);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #07060b;
+}
+
+.ticket-badge-tag {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ticket-fdfs-pill {
+  background: #07060b;
+  color: var(--accent-gold);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 800;
+}
+
+/* Ticket Main Body */
+.ticket-body {
+  padding: 24px;
+}
+
+.ticket-movie-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.ticket-track-name {
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Cast Grid inside Ticket */
+.ticket-cast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+}
+
+.ticket-cast-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-role-title {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ticket-role-name {
+  font-size: 0.88rem;
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Perforation Tear Notch */
+.ticket-perforation {
+  position: relative;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-perforation::before, .ticket-perforation::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: var(--bg-primary);
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid var(--accent-gold);
+}
+
+.ticket-perforation::before {
+  left: -13px;
+}
+
+.ticket-perforation::after {
+  right: -13px;
+}
+
+.perforation-line {
+  width: 100%;
+  height: 0;
+  border-top: 2px dashed rgba(255, 190, 26, 0.4);
+}
+
+/* Ticket Footer / Stub */
+.ticket-stub {
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stub-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stub-seat {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--accent-gold);
+}
+
+.stub-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Barcode Visualizer */
+.ticket-barcode-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.barcode-lines {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 36px;
+}
+
+.b-bar {
+  background: #ffffff;
+  height: 100%;
+}
+
+.b-1 { width: 1.5px; }
+.b-2 { width: 3px; }
+.b-3 { width: 4.5px; }
+
+.barcode-code {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+}
+
+/* Ticket Actions */
+.ticket-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ticket-actions .btn {
+  flex: 1;
+}
+
+/* Print Optimization */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .ticket-container, .ticket-container * {
+    visibility: visible;
+  }
+  .ticket-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+  }
+}

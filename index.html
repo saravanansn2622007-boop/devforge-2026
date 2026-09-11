@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVFORGE 2026 | Kollywood CineTech Hackathon</title>
+  <meta name="description" content="Where Tamil Cinema meets Cutting-Edge Tech! Code like a Superstar, architect like a Director in DEVFORGE 2026 - the ultimate 24-hour Kollywood CineTech Hackathon." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Outfit:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/actors.css" />
+  <link rel="stylesheet" href="css/ticket.css" />
+</head>
+<body>
+
+  <!-- Dynamic Interactive Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Film Grain Texture Overlay -->
+  <div class="film-grain"></div>
+
+  <!-- Main App Wrapper -->
+  <div class="app-container">
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-wrapper">
+        <a href="#hero" class="brand-logo">
+          <div class="brand-icon">🎬</div>
+          <div class="brand-title">
+            DEVFORGE
+            <span class="brand-sub">CINETECH '26</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#actors" class="nav-link">Superstars 🌟</a></li>
+          <li><a href="#tracks" class="nav-link">Tracks</a></li>
+          <li><a href="#schedule" class="nav-link">Screenplay</a></li>
+          <li><a href="#dialogues" class="nav-link">Punch Dialogues</a></li>
+          <li><a href="#prizes" class="nav-link">Awards</a></li>
+          <li><a href="#register" class="nav-link">Register Crew</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div class="nav-controls">
+          <!-- Audio Equalizer Visualizer & Mute Toggle -->
+          <button id="sound-toggle-btn" class="icon-btn" title="Toggle Cinema Sound FX" aria-label="Toggle Sound">
+            🔊
+          </button>
+          <div id="sound-eq" class="sound-equalizer" title="Web Audio Synthesizer Active">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+
+          <a href="#register" class="btn btn-primary btn-sm">🚀 Register Crew</a>
+          <button class="icon-btn mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="spotlight-beam"></div>
+        <div class="container">
+
+          <!-- Clapperboard Scene Controller (Theme Switcher) -->
+          <div class="clapper-theme-bar">
+            <span class="clapper-label">🎬 ATMOSPHERE:</span>
+            <button class="theme-chip active" data-theme-val="default">🌟 Thalaivar Gold</button>
+            <button class="theme-chip" data-theme-val="lcu">🔥 LCU Blood Red</button>
+            <button class="theme-chip" data-theme-val="chitti">🤖 Chitti 2.0 Cyan</button>
+            <button class="theme-chip" data-theme-val="vintage">🎞️ Vintage 90s</button>
+          </div>
+
+          <div class="hero-grid">
+            <!-- Left Hero Content -->
+            <div class="hero-content">
+              <div class="hero-tag">
+                <span>⚡ DEVFORGE 2026 • 24-HOUR CINETECH HACKATHON</span>
+              </div>
+
+              <h1 class="hero-title">
+                CODE LIKE A <span class="text-gold shimmer-text">SUPERSTAR</span><br />
+                BUILD LIKE A <span class="text-crimson">DIRECTOR</span>!
+              </h1>
+
+              <p class="hero-tagline">
+                The grand 24-hour non-stop sprint fusing <strong>Tamil Cinema Mass Culture</strong> and <strong>Cutting-Edge Deep Tech</strong>. Build AI Screenwriters, Chitti Robotics, LCU Systems, and Anirudh-Level Audio Engines.
+              </p>
+
+              <div class="hero-cta-group">
+                <a href="#register" class="btn btn-primary btn-lg">
+                  🚀 Register Your Crew
+                </a>
+                <button id="superstar-intro-btn" class="btn btn-secondary btn-lg">
+                  🌟 Superstar Mass Entry!
+                </button>
+              </div>
+
+              <!-- Live Key Stats -->
+              <div class="hero-stats-row">
+                <div class="stat-item">
+                  <div class="stat-number" data-target="8000" data-prefix="₹">₹8,000</div>
+                  <div class="stat-label">Total Prize Pool</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number" data-target="24" data-suffix=" Hrs">24 Hrs</div>
+                  <div class="stat-label">Non-Stop Hack</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number" data-target="160">160</div>
+                  <div class="stat-label">Hackers & Creators</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Interactive Clapperboard & Countdown -->
+            <div class="hero-clapper-card" title="Click to trigger Cinema Clapperboard ACTION!">
+              <div class="clapper-top-strip"></div>
+              
+              <div class="clapper-scene-info">
+                <div class="clapper-box">
+                  <div class="clapper-label">PRODUCTION</div>
+                  <div class="clapper-val">DEVFORGE</div>
+                </div>
+                <div class="clapper-box">
+                  <div class="clapper-label">SCENE / TAKE</div>
+                  <div class="clapper-val">01 / 2026</div>
+                </div>
+                <div class="clapper-box">
+                  <div class="clapper-label">DIRECTOR</div>
+                  <div class="clapper-val">YOU</div>
+                </div>
+              </div>
+
+              <!-- 24-Hour Live Countdown -->
+              <div class="clapper-countdown">
+                <div class="countdown-title">⏳ FIRST DAY FIRST SHOW (FDFS) STARTS IN</div>
+                <div class="countdown-timer">
+                  <div class="timer-unit">
+                    <div id="cd-days" class="timer-val">02</div>
+                    <div class="timer-sub">Days</div>
+                  </div>
+                  <div class="timer-unit">
+                    <div id="cd-hours" class="timer-val">08</div>
+                    <div class="timer-sub">Hours</div>
+                  </div>
+                  <div class="timer-unit">
+                    <div id="cd-mins" class="timer-val">45</div>
+                    <div class="timer-sub">Mins</div>
+                  </div>
+                  <div class="timer-unit">
+                    <div id="cd-secs" class="timer-val">30</div>
+                    <div class="timer-sub">Secs</div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-crimson clapper-action-btn">
+                🎬 CLICK FOR ACTION!
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- INTERACTIVE ACTORS ARENA (3D Parallax & Live Action Animations) -->
+      <!-- ================================================================= -->
+      <section id="actors" class="actors-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">HALL OF SUPERSTARS</div>
+            <h2 class="section-title">INTERACTIVE <span class="text-gold">ACTORS ARENA</span></h2>
+            <p class="section-subtitle">
+              Move your cursor for real-time 3D parallax tilt. <strong>Click any Superstar</strong> to trigger their iconic cinematic signature action and audio fanfare!
+            </p>
+          </div>
+
+          <div class="actors-stage-container">
+            <!-- 1. Superstar Rajinikanth -->
+            <div class="actor-card rajini-card" data-actor="rajini">
+              <div class="actor-foil-glare"></div>
+              <div class="actor-visual-layer">
+                <div class="actor-aura"></div>
+                <div class="actor-illustration">
+                  <div class="superstar-crest">
+                    <svg class="sunburst-halo" viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#rajiniGoldGlow)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+                      <circle cx="100" cy="100" r="85" fill="none" stroke="#ffbe1a" stroke-width="0.8" stroke-dasharray="2 8" opacity="0.4"/>
+                      <defs>
+                        <radialGradient id="rajiniGoldGlow" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="#ffe259"/>
+                          <stop offset="100%" stop-color="#ffa751"/>
+                        </radialGradient>
+                      </defs>
+                    </svg>
+                    <!-- Golden Crown SVG -->
+                    <svg class="superstar-crown-svg" viewBox="0 0 120 70">
+                      <path d="M15,60 L20,28 L45,45 L60,10 L75,45 L100,28 L105,60 Z" fill="url(#crownGoldGrad)" stroke="#ffd700" stroke-width="2" filter="drop-shadow(0 0 12px rgba(255, 215, 0, 0.7))"/>
+                      <circle cx="60" cy="10" r="4.5" fill="#ff3366" stroke="#fff" stroke-width="1"/>
+                      <circle cx="20" cy="28" r="3.5" fill="#00f0ff" stroke="#fff" stroke-width="0.8"/>
+                      <circle cx="100" cy="28" r="3.5" fill="#00f0ff" stroke="#fff" stroke-width="0.8"/>
+                      <circle cx="45" cy="45" r="2.5" fill="#ffbe1a"/>
+                      <circle cx="75" cy="45" r="2.5" fill="#ffbe1a"/>
+                      <!-- Crown Base Trim -->
+                      <rect x="15" y="55" width="90" height="7" rx="3" fill="#ffd700" stroke="#b8860b" stroke-width="1"/>
+                      <circle cx="35" cy="58.5" r="2" fill="#e60049"/>
+                      <circle cx="60" cy="58.5" r="2.5" fill="#00e5ff"/>
+                      <circle cx="85" cy="58.5" r="2" fill="#e60049"/>
+                      <defs>
+                        <linearGradient id="crownGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#fff6a9"/>
+                          <stop offset="35%" stop-color="#ffd700"/>
+                          <stop offset="70%" stop-color="#e69500"/>
+                          <stop offset="100%" stop-color="#995c00"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <!-- Iconic Aviator Sunglasses SVG -->
+                    <div class="rajini-glasses-wrapper">
+                      <svg class="rajini-aviator-svg" viewBox="0 0 140 50">
+                        <!-- Top Brow Bar -->
+                        <path d="M25,12 Q70,5 115,12" fill="none" stroke="#ffd700" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 6px rgba(255,215,0,0.8))"/>
+                        <!-- Center Bridge -->
+                        <path d="M62,18 Q70,14 78,18" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Left Lens Frame -->
+                        <path d="M20,16 Q20,42 42,42 Q64,42 62,16 Q40,14 20,16 Z" fill="url(#rajiniLensGrad)" stroke="#ffd700" stroke-width="2.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.9))"/>
+                        <!-- Right Lens Frame -->
+                        <path d="M78,16 Q76,42 98,42 Q120,42 120,16 Q100,14 78,16 Z" fill="url(#rajiniLensGrad)" stroke="#ffd700" stroke-width="2.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.9))"/>
+                        <!-- Lens Glint Highlights -->
+                        <path d="M26,20 L38,20 L28,36 L22,36 Z" fill="#ffffff" opacity="0.35"/>
+                        <path d="M84,20 L96,20 L86,36 L80,36 Z" fill="#ffffff" opacity="0.35"/>
+                        <defs>
+                          <linearGradient id="rajiniLensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#2a2010"/>
+                            <stop offset="40%" stop-color="#141018"/>
+                            <stop offset="100%" stop-color="#050308"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      <div class="lens-sparkle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="actor-info-layer">
+                <div class="actor-meta-row">
+                  <span class="actor-tagline-badge">🌟 THALAIVAR MASS</span>
+                  <span class="actor-cinema-role">Baashha • Jailer • DevForge</span>
+                </div>
+                <h3 class="actor-name">Superstar Rajinikanth</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">
+                  Click to trigger the legendary <strong>720° Sunglasses Flip</strong> & Gold Halo!
+                </p>
+                <div class="actor-action-prompt">
+                  <button class="hype-btn">👏 Send Whistle</button>
+                  <span class="hype-counter" data-count="942">942K HYPE 🔥</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Thalapathy Vijay -->
+            <div class="actor-card vijay-card" data-actor="vijay">
+              <div class="actor-foil-glare"></div>
+              <div class="actor-visual-layer">
+                <div class="actor-aura"></div>
+                <div class="leo-flame-emitter"></div>
+                <div class="actor-illustration">
+                  <div class="leo-lion-crest">
+                    <svg class="leo-lion-svg" viewBox="0 0 160 160">
+                      <!-- Fiery Flame Aura Backdrop -->
+                      <polygon points="80,10 100,45 135,35 125,70 155,90 125,110 135,145 100,135 80,155 60,135 25,145 35,110 5,90 35,70 25,35 60,45" fill="url(#leoFlameGrad)" opacity="0.3" filter="drop-shadow(0 0 18px rgba(255, 51, 75, 0.8))"/>
+                      <!-- Geometric Lion Mane & Face -->
+                      <path d="M80,30 L108,55 L125,92 L105,125 L80,140 L55,125 L35,92 L52,55 Z" fill="#140810" stroke="#ff334b" stroke-width="2.5"/>
+                      <polygon points="80,45 100,65 110,95 80,128 50,95 60,65" fill="url(#leoManeGrad)" stroke="#ff6b3d" stroke-width="1.5"/>
+                      <!-- Lion Cheeks & Nose -->
+                      <polygon points="80,85 92,100 80,118 68,100" fill="#200a12" stroke="#ff334b" stroke-width="1.5"/>
+                      <polygon points="76,96 84,96 80,104" fill="#ff334b"/>
+                      <!-- Fierce Glowing Eyes -->
+                      <polygon points="62,78 74,80 66,85" fill="#ffea00" filter="drop-shadow(0 0 6px #ffea00)"/>
+                      <polygon points="98,78 86,80 94,85" fill="#ffea00" filter="drop-shadow(0 0 6px #ffea00)"/>
+                      <circle cx="68" cy="81" r="1.5" fill="#000"/>
+                      <circle cx="92" cy="81" r="1.5" fill="#000"/>
+                      <!-- Forehead Blade Mark / Tribal Scars -->
+                      <path d="M80,50 L80,72 M74,58 L86,58" stroke="#ffea00" stroke-width="2" stroke-linecap="round" filter="drop-shadow(0 0 5px #ff6b3d)"/>
+                      <defs>
+                        <linearGradient id="leoFlameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#ff334b"/>
+                          <stop offset="50%" stop-color="#ff7a00"/>
+                          <stop offset="100%" stop-color="#99001a"/>
+                        </linearGradient>
+                        <linearGradient id="leoManeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="#3d0f19"/>
+                          <stop offset="50%" stop-color="#2a0710"/>
+                          <stop offset="100%" stop-color="#140307"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="bloody-sweet-tag">BLOODY SWEET</div>
+                  </div>
+                </div>
+              </div>
+              <div class="actor-info-layer">
+                <div class="actor-meta-row">
+                  <span class="actor-tagline-badge" style="color: #ff4d61; border-color: rgba(255, 77, 97, 0.4);">🔥 BLOODY SWEET</span>
+                  <span class="actor-cinema-role">Leo • Master • GOAT</span>
+                </div>
+                <h3 class="actor-name">Thalapathy Vijay</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">
+                  Click to unleash the <strong>Leo Ember Explosion</strong> & Lion's Roar Bass Drop!
+                </p>
+                <div class="actor-action-prompt">
+                  <button class="hype-btn">👏 Send Whistle</button>
+                  <span class="hype-counter" data-count="885">885K HYPE 🔥</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Chitti 2.0 (Enthiran) -->
+            <div class="actor-card chitti-card" data-actor="chitti">
+              <div class="actor-foil-glare"></div>
+              <div class="actor-visual-layer">
+                <div class="actor-aura"></div>
+                <div class="robot-scanline"></div>
+                <div class="actor-illustration">
+                  <div class="chitti-head-mech">
+                    <svg class="chitti-android-svg" viewBox="0 0 150 160">
+                      <!-- Circuit traces -->
+                      <path d="M15,40 L40,40 L55,20 M135,40 L110,40 L95,20 M10,100 L35,100 L50,120 M140,100 L115,100 L100,120" fill="none" stroke="url(#chittiCircuitGrad)" stroke-width="1.5" opacity="0.7"/>
+                      <!-- Outer Mech Armor Shell -->
+                      <polygon points="75,15 118,32 128,85 110,135 75,150 40,135 22,85 32,32" fill="#08101a" stroke="url(#chittiArmorGrad)" stroke-width="2.5" filter="drop-shadow(0 0 16px rgba(0, 240, 255, 0.4))"/>
+                      <!-- Inner Faceplate Core -->
+                      <polygon points="75,32 105,45 112,85 96,122 75,132 54,122 38,85 45,45" fill="#03080e" stroke="#00f0ff" stroke-width="1.5"/>
+                      <!-- Dual Ocular Visor Optics -->
+                      <g class="chitti-eyes-group">
+                        <rect x="48" y="62" width="22" height="11" rx="3" class="chitti-hud-eye" fill="#00f0ff" filter="drop-shadow(0 0 10px #00f0ff)"/>
+                        <rect x="80" y="62" width="22" height="11" rx="3" class="chitti-hud-eye" fill="#00f0ff" filter="drop-shadow(0 0 10px #00f0ff)"/>
+                        <!-- Reticle Crosshair -->
+                        <line x1="59" y1="58" x2="59" y2="77" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+                        <line x1="91" y1="58" x2="91" y2="77" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+                      </g>
+                      <!-- Audio/Neural Wave Bar -->
+                      <path d="M56,98 L64,94 L70,102 L75,92 L80,102 L86,94 L94,98" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round"/>
+                      <!-- Status Readout Micro Text -->
+                      <text x="75" y="116" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#00f0ff" text-anchor="middle" letter-spacing="1">1 THz // 1 ZB</text>
+                      <defs>
+                        <linearGradient id="chittiArmorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#00f0ff"/>
+                          <stop offset="50%" stop-color="#006699"/>
+                          <stop offset="100%" stop-color="#002233"/>
+                        </linearGradient>
+                        <linearGradient id="chittiCircuitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#00f0ff"/>
+                          <stop offset="100%" stop-color="#003366"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="tech-overclock-ring"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="actor-info-layer">
+                <div class="actor-meta-row">
+                  <span class="actor-tagline-badge" style="color: #00f0ff; border-color: rgba(0, 240, 255, 0.4);">⚡ 1 THz / 1 ZB</span>
+                  <span class="actor-cinema-role">Enthiran 2.0 • AI Core</span>
+                </div>
+                <h3 class="actor-name">Chitti Robo 2.0</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">
+                  Click to engage <strong>Red Neural Mode</strong>, Laser Scan & Tech Overclock!
+                </p>
+                <div class="actor-action-prompt">
+                  <button class="hype-btn">👏 Send Whistle</button>
+                  <span class="hype-counter" data-count="790">790K HYPE 🔥</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Kamal Haasan (Vikram) -->
+            <div class="actor-card kamal-card" data-actor="kamal">
+              <div class="actor-foil-glare"></div>
+              <div class="actor-visual-layer">
+                <div class="actor-aura"></div>
+                <div class="actor-illustration">
+                  <div class="lcu-commander-crest">
+                    <svg class="kamal-eagle-svg" viewBox="0 0 160 160">
+                      <!-- Radar / Night-Vision Reticle -->
+                      <circle cx="80" cy="80" r="65" fill="none" stroke="#a855f7" stroke-width="1" stroke-dasharray="8 6" opacity="0.4"/>
+                      <circle cx="80" cy="80" r="45" fill="none" stroke="#c084fc" stroke-width="0.75" opacity="0.3"/>
+                      <line x1="80" y1="12" x2="80" y2="148" stroke="#a855f7" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+                      <line x1="12" y1="80" x2="148" y2="80" stroke="#a855f7" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+                      <!-- Tactical Apex Eagle Crest -->
+                      <!-- Wings Left -->
+                      <path d="M80,70 L25,40 L45,72 L20,78 L50,96 L80,90 Z" fill="url(#kamalWingGrad)" stroke="#c084fc" stroke-width="1.5" filter="drop-shadow(0 0 10px rgba(168, 85, 247, 0.5))"/>
+                      <!-- Wings Right -->
+                      <path d="M80,70 L135,40 L115,72 L140,78 L110,96 L80,90 Z" fill="url(#kamalWingGrad)" stroke="#c084fc" stroke-width="1.5" filter="drop-shadow(0 0 10px rgba(168, 85, 247, 0.5))"/>
+                      <!-- Eagle Head & Beak -->
+                      <polygon points="80,35 94,55 86,72 80,76 74,72 66,55" fill="#240c38" stroke="#e9d5ff" stroke-width="2"/>
+                      <polygon points="80,58 90,68 80,76" fill="#facc15" stroke="#ca8a04" stroke-width="1"/>
+                      <!-- Fierce Eagle Eye -->
+                      <circle cx="75" cy="54" r="2.5" fill="#facc15" filter="drop-shadow(0 0 4px #facc15)"/>
+                      <circle cx="75" cy="54" r="1" fill="#000"/>
+                      <!-- Vikram Insignia Cross-Daggers -->
+                      <path d="M50,118 L110,118 M60,112 L100,124 M60,124 L100,112" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+                      <defs>
+                        <linearGradient id="kamalWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#3b0764"/>
+                          <stop offset="50%" stop-color="#6b21a8"/>
+                          <stop offset="100%" stop-color="#1e0538"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="lcu-badge-tag">VIKRAM // LCU</div>
+                  </div>
+                </div>
+              </div>
+              <div class="actor-info-layer">
+                <div class="actor-meta-row">
+                  <span class="actor-tagline-badge" style="color: #c084fc; border-color: rgba(192, 132, 252, 0.4);">🦅 LCU COMMANDER</span>
+                  <span class="actor-cinema-role">Vikram • Nayakan • DevForge</span>
+                </div>
+                <h3 class="actor-name">Kamal Haasan (Vikram)</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">
+                  Click to summon the <strong>LCU Dark Smoke Swirl</strong> & Tactical drumroll!
+                </p>
+                <div class="actor-action-prompt">
+                  <button class="hype-btn">👏 Send Whistle</button>
+                  <span class="hype-counter" data-count="720">720K HYPE 🔥</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Thala Ajith Kumar -->
+            <div class="actor-card ajith-card" data-actor="ajith">
+              <div class="actor-foil-glare"></div>
+              <div class="actor-visual-layer">
+                <div class="actor-aura"></div>
+                <div class="actor-illustration">
+                  <div class="mankatha-racer-crest">
+                    <!-- Tachometer Speedometer Ring SVG -->
+                    <svg class="ajith-speedo-svg" viewBox="0 0 160 160">
+                      <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(56, 189, 248, 0.2)" stroke-width="4"/>
+                      <circle cx="80" cy="80" r="70" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="310 130" stroke-dashoffset="65" stroke-linecap="round" filter="drop-shadow(0 0 8px #38bdf8)"/>
+                      <!-- Speed Ticks -->
+                      <line x1="24" y1="80" x2="34" y2="80" stroke="#38bdf8" stroke-width="2"/>
+                      <line x1="80" y1="24" x2="80" y2="34" stroke="#ff0055" stroke-width="2.5"/>
+                      <line x1="136" y1="80" x2="126" y2="80" stroke="#38bdf8" stroke-width="2"/>
+                      <!-- RPM Needle -->
+                      <line x1="80" y1="80" x2="118" y2="46" stroke="#ff0055" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 6px #ff0055)"/>
+                      <circle cx="80" cy="80" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+                    </svg>
+                    <!-- Legendary 3D Mankatha Coin -->
+                    <div class="mankatha-coin-3d">
+                      <div class="coin-face front">
+                        <svg viewBox="0 0 80 80">
+                          <circle cx="40" cy="40" r="36" fill="url(#coinGoldGrad)" stroke="#ffd700" stroke-width="2.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.8))"/>
+                          <circle cx="40" cy="40" r="28" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-dasharray="4 2"/>
+                          <!-- Spade / King Emblem -->
+                          <path d="M40,22 Q46,32 50,38 Q46,44 40,42 Q34,44 30,38 Q34,32 40,22 Z" fill="#111"/>
+                          <polygon points="38,42 42,42 44,49 36,49" fill="#111"/>
+                          <text x="40" y="58" font-family="'Cinzel', serif" font-size="7.5" font-weight="900" fill="#2d1c02" text-anchor="middle" letter-spacing="0.5">NO RULES</text>
+                          <defs>
+                            <linearGradient id="coinGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#fff4b8"/>
+                              <stop offset="40%" stop-color="#ffd700"/>
+                              <stop offset="80%" stop-color="#cc8800"/>
+                              <stop offset="100%" stop-color="#7a4b00"/>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="actor-info-layer">
+                <div class="actor-meta-row">
+                  <span class="actor-tagline-badge" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">⚡ NO RULES</span>
+                  <span class="actor-cinema-role">Mankatha • Billa • Racer</span>
+                </div>
+                <h3 class="actor-name">Thala Ajith Kumar</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">
+                  Click to trigger the <strong>Mankatha 1440° Coin Flip</strong> & Turbo Nitro blast!
+                </p>
+                <div class="actor-action-prompt">
+                  <button class="hype-btn">👏 Send Whistle</button>
+                  <span class="hype-counter" data-count="810">810K HYPE 🔥</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Suriya (24 / Rolex) -->
+            <div class="actor-card suriya-card" data-actor="suriya">
+              <div class="actor-foil-glare"></div>
+              <div class="actor-visual-layer">
+                <div class="actor-aura"></div>
+                <div class="actor-illustration">
+                  <div class="chronos-24-watch">
+                    <svg class="suriya-chronos-svg" viewBox="0 0 160 160">
+                      <!-- Temporal Ring Spacetime Ripples -->
+                      <circle cx="80" cy="80" r="72" fill="none" stroke="#eab308" stroke-width="1" stroke-dasharray="3 6" opacity="0.5"/>
+                      <circle cx="80" cy="80" r="62" fill="none" stroke="#fef08a" stroke-width="1.5" opacity="0.3"/>
+                      <!-- Outer Watch Casing with Crown Winder -->
+                      <rect x="74" y="8" width="12" height="10" rx="2" fill="#ca8a04" stroke="#facc15" stroke-width="1"/>
+                      <circle cx="80" cy="80" r="54" fill="url(#watchFaceGrad)" stroke="#eab308" stroke-width="3" filter="drop-shadow(0 0 16px rgba(234, 179, 8, 0.6))"/>
+                      <!-- Inner Gears -->
+                      <g class="watch-internal-gear" transform="translate(80, 80)">
+                        <circle cx="0" cy="0" r="28" fill="none" stroke="#854d0e" stroke-width="3" stroke-dasharray="6 3"/>
+                        <circle cx="0" cy="0" r="16" fill="none" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4 2"/>
+                      </g>
+                      <!-- Roman Numerals -->
+                      <text x="80" y="44" font-family="'Cinzel', serif" font-size="8" font-weight="700" fill="#fef08a" text-anchor="middle">XII</text>
+                      <text x="118" y="83" font-family="'Cinzel', serif" font-size="8" font-weight="700" fill="#fef08a" text-anchor="middle">III</text>
+                      <text x="80" y="122" font-family="'Cinzel', serif" font-size="8" font-weight="700" fill="#fef08a" text-anchor="middle">VI</text>
+                      <text x="42" y="83" font-family="'Cinzel', serif" font-size="8" font-weight="700" fill="#fef08a" text-anchor="middle">IX</text>
+                      <!-- Rolex / 24 Watermark -->
+                      <text x="80" y="66" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="900" fill="#eab308" text-anchor="middle" letter-spacing="1">24 // CHRONOS</text>
+                      <!-- Watch Hands -->
+                      <line x1="80" y1="80" x2="80" y2="52" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" class="hour-hand-svg"/>
+                      <line x1="80" y1="80" x2="105" y2="80" stroke="#facc15" stroke-width="1.8" stroke-linecap="round" class="minute-hand-svg"/>
+                      <circle cx="80" cy="80" r="3.5" fill="#ff0055" stroke="#fff" stroke-width="1"/>
+                      <defs>
+                        <radialGradient id="watchFaceGrad" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="#1f1807"/>
+                          <stop offset="70%" stop-color="#0e0a02"/>
+                          <stop offset="100%" stop-color="#050400"/>
+                        </radialGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="actor-info-layer">
+                <div class="actor-meta-row">
+                  <span class="actor-tagline-badge" style="color: #facc15; border-color: rgba(250, 204, 21, 0.4);">⌛ CHRONOS 24</span>
+                  <span class="actor-cinema-role">24 • Vikram (Rolex)</span>
+                </div>
+                <h3 class="actor-name">Suriya (Rolex / 24)</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">
+                  Click to engage the <strong>Time-Freeze Watch Turbo Spin</strong> & Clock SFX!
+                </p>
+                <div class="actor-action-prompt">
+                  <button class="hype-btn">👏 Send Whistle</button>
+                  <span class="hype-counter" data-count="695">695K HYPE 🔥</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Box-Office Tracks (Challenges) -->
+      <section id="tracks" class="tracks-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">THE 4 BOX-OFFICE TRACKS</div>
+            <h2 class="section-title">CHOOSE YOUR <span class="text-gold">HACKATHON THEME</span></h2>
+            <p class="section-subtitle">
+              Choose your arena from 4 core cutting-edge domains: Cybersecurity + Fullstack, Mobile App, Enterprise App, or AI / ML.
+            </p>
+          </div>
+
+          <div class="tracks-grid">
+            <!-- Track 1: Cybersecurity + Fullstack -->
+            <div class="track-card">
+              <div class="track-badge">CYBERSECURITY + FULLSTACK</div>
+              <div class="track-icon">🛡️</div>
+              <h3 class="track-title">Cybersecurity + Fullstack</h3>
+              <p class="track-desc">
+                Architect resilient end-to-end fullstack platforms, zero-trust authentication, threat detection pipelines, and bulletproof web application security systems with mass performance.
+              </p>
+              <div class="track-tags">
+                <span class="tech-tag">Fullstack JS/TS</span>
+                <span class="tech-tag">Zero-Trust Auth</span>
+                <span class="tech-tag">Cyber Defense</span>
+                <span class="tech-tag">Next.js / Node</span>
+                <span class="tech-tag">API Security</span>
+              </div>
+            </div>
+
+            <!-- Track 2: Mobile App -->
+            <div class="track-card">
+              <div class="track-badge">MOBILE APP</div>
+              <div class="track-icon">📱</div>
+              <h3 class="track-title">Mobile App Development</h3>
+              <p class="track-desc">
+                Develop fluid, high-performance mobile applications for iOS & Android with offline-first synchronization, native micro-animations, and real-time push streaming experiences.
+              </p>
+              <div class="track-tags">
+                <span class="tech-tag">Flutter / React Native</span>
+                <span class="tech-tag">iOS & Android</span>
+                <span class="tech-tag">Offline Sync</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">Mobile UX</span>
+              </div>
+            </div>
+
+            <!-- Track 3: Enterprise App -->
+            <div class="track-card">
+              <div class="track-badge">ENTERPRISE APP</div>
+              <div class="track-icon">🏢</div>
+              <h3 class="track-title">Enterprise Application Architecture</h3>
+              <p class="track-desc">
+                Engineer distributed enterprise systems, microservices meshes, high-throughput message streaming, automated workflows, and robust cloud data infrastructure for scale.
+              </p>
+              <div class="track-tags">
+                <span class="tech-tag">Microservices</span>
+                <span class="tech-tag">Kubernetes / Docker</span>
+                <span class="tech-tag">Cloud Scale</span>
+                <span class="tech-tag">Kafka / Redis</span>
+                <span class="tech-tag">Enterprise DB</span>
+              </div>
+            </div>
+
+            <!-- Track 4: AI / ML -->
+            <div class="track-card">
+              <div class="track-badge">AI / ML</div>
+              <div class="track-icon">🤖</div>
+              <h3 class="track-title">AI & Machine Learning</h3>
+              <p class="track-desc">
+                Build next-gen generative AI applications, deep learning neural models, computer vision systems, natural language intelligence, and autonomous predictive algorithms.
+              </p>
+              <div class="track-tags">
+                <span class="tech-tag">LLMs / GenAI</span>
+                <span class="tech-tag">PyTorch / TensorFlow</span>
+                <span class="tech-tag">Deep Learning</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Predictive ML</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenplay Timeline (Schedule) -->
+      <section id="schedule" class="schedule-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">THE 24-HOUR SCREENPLAY</div>
+            <h2 class="section-title">HACKATHON <span class="text-gold">SCENE-BY-SCENE</span></h2>
+            <p class="section-subtitle">
+              Follow the directorial roadmap of our 24-hour non-stop hack from opening title card to the grand climax.
+            </p>
+          </div>
+
+          <div class="timeline-container">
+            <!-- Scene 1 -->
+            <div class="timeline-block">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-scene-tag">SCENE 1: THE TITLE CARD (ROLL CAMERA)</div>
+                <div class="timeline-time">📅 Sep 22, 2026 • 09:00 AM - 11:00 AM</div>
+                <h3 class="timeline-title">Opening Keynote & Pitching</h3>
+                <p class="timeline-desc">
+                  Grand intro, track briefing, crew formation, and sponsor API credentials & compute distribution.
+                </p>
+              </div>
+            </div>
+
+            <!-- Scene 2 -->
+            <div class="timeline-block">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-scene-tag">SCENE 2: THE INTERVAL BLOCK (MID-SCREENING)</div>
+                <div class="timeline-time">📅 Sep 22, 2026 • 04:00 PM - 07:00 PM</div>
+                <h3 class="timeline-title">Architectural Review & Mentor Checkpoint</h3>
+                <p class="timeline-desc">
+                  1-on-1 mentor guidance sessions, progress audits, and technical debugging with domain experts.
+                </p>
+              </div>
+            </div>
+
+            <!-- Scene 3 -->
+            <div class="timeline-block">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-scene-tag">SCENE 3: NIGHT HACK (RED BULL FUEL)</div>
+                <div class="timeline-time">📅 Sep 22-23 • 11:30 PM - 03:00 AM • Midnight</div>
+                <h3 class="timeline-title">Midnight Sprint & Mini-Challenges</h3>
+                <p class="timeline-desc">
+                  Red Bull energy station opens! Lightning coding challenges, music beats, and fast-paced feature integration.
+                </p>
+              </div>
+            </div>
+
+            <!-- Scene 4 -->
+            <div class="timeline-block">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-scene-tag">SCENE 4: THE CLIMAX & SUCCESS MEET</div>
+                <div class="timeline-time">📅 Sep 23, 2026 • 07:00 AM - 09:00 AM</div>
+                <h3 class="timeline-title">Code Freeze, Jury Demos & Awards</h3>
+                <p class="timeline-desc">
+                  Final Git push, live project demos to jury panel, trophy handover, and celebration of the ₹8,000 Total Prize Pool!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Easter Egg: Kollywood Mass Punch Dialogue Generator -->
+      <section id="dialogues" class="dialogue-generator-section">
+        <div class="container">
+          <div class="dialogue-card" id="dialogue-main-card" data-hero-theme="superstar">
+            <div class="dialogue-card-glow"></div>
+            
+            <!-- Cinema Clapperboard Header -->
+            <div class="cinema-clapper-bar">
+              <div class="clapper-stripes"></div>
+              <div class="clapper-meta">
+                <span class="clapper-badge">🎬 PROD: DEVFORGE '26</span>
+                <span class="clapper-badge">SCENE: MASS PUNCHLINE</span>
+                <span class="clapper-badge clapper-take">TAKE: #<span id="dialogue-take-num">1</span></span>
+              </div>
+            </div>
+
+            <div class="section-tag">EASTER EGG GENERATOR</div>
+            <h2 class="section-title">KOLLYWOOD <span class="text-gold">TECH PUNCHLINES</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 24px;">
+              Need coding adrenaline? Select your favorite superstar and unleash an iconic cinema tech punchline!
+            </p>
+
+            <div class="hero-avatar-picker">
+              <button class="hero-chip active" data-hero="all">
+                <span class="chip-icon">🌟</span>
+                <span>All Heroes</span>
+              </button>
+              <button class="hero-chip" data-hero="superstar">
+                <span class="chip-icon">👑</span>
+                <span>Superstar Rajini</span>
+              </button>
+              <button class="hero-chip" data-hero="thalapathy">
+                <span class="chip-icon">🔥</span>
+                <span>Thalapathy Vijay</span>
+              </button>
+              <button class="hero-chip" data-hero="thala">
+                <span class="chip-icon">⚡</span>
+                <span>Thala Ajith</span>
+              </button>
+              <button class="hero-chip" data-hero="ulaganayagan">
+                <span class="chip-icon">🦅</span>
+                <span>Kamal Haasan</span>
+              </button>
+              <button class="hero-chip" data-hero="chitti">
+                <span class="chip-icon">🤖</span>
+                <span>Chitti 2.0</span>
+              </button>
+              <button class="hero-chip" data-hero="suriya">
+                <span class="chip-icon">⏳</span>
+                <span>Suriya (24)</span>
+              </button>
+            </div>
+
+            <!-- Cinema Dialogue Showcase Stage -->
+            <div class="dialogue-theatre-screen">
+              <div class="cinema-spotlight-beam"></div>
+              
+              <div class="dialogue-hero-spotlight" id="dialogue-hero-avatar">
+                <div class="spotlight-avatar-ring">
+                  <span id="hero-dynamic-emblem" class="hero-dynamic-emblem">👑</span>
+                </div>
+              </div>
+
+              <!-- Audio visualizer bars -->
+              <div class="dialogue-audio-equalizer" id="dialogue-equalizer">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+
+              <div class="dialogue-box">
+                <div class="dialogue-quote-wrapper">
+                  <span class="quote-mark open-quote">“</span>
+                  <div id="dialogue-quote" class="dialogue-text">
+                    Naan oru thadava code commit panna... noora thadava run aana maathiri!
+                  </div>
+                  <span class="quote-mark close-quote">”</span>
+                </div>
+                <div id="dialogue-speaker" class="dialogue-author">
+                  <span class="author-name">Superstar Rajinikanth</span> • <span class="author-movie">Baashha (1995)</span> • <span class="author-context">Clean Code & Git Commit Mastery</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dialogue Interaction Controls -->
+            <div class="dialogue-action-controls">
+              <button id="generate-dialogue-btn" class="btn btn-primary pulse-btn">
+                <span>⚡ Generate Next Mass Punchline!</span>
+              </button>
+              <button id="copy-dialogue-btn" class="btn btn-secondary dialogue-copy-btn" title="Copy dialogue to clipboard">
+                <span>📋 Copy Punchline</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prizes & Awards (Total Prize Pool Spotlight) -->
+      <section id="prizes" class="prizes-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">THE VIJAY & FILMFARE OF TECH</div>
+            <h2 class="section-title">TOTAL <span class="text-gold">PRIZE POOL</span></h2>
+            <p class="section-subtitle">
+              Compete in the 24-hour sprint for cash rewards, CineTech trophies, certificates, and incubator access.
+            </p>
+          </div>
+
+          <div class="prizes-spotlight-wrapper">
+            <div class="prize-card grand-spotlight-card">
+              <div class="track-badge" style="top: 20px; right: 20px;">GRAND BLOCKBUSTER</div>
+              <div class="prize-trophy">🏆</div>
+              <h3 class="prize-title text-gold">Total Prize Pool</h3>
+              <div class="prize-amount grand-amount">₹8,000</div>
+              
+              <div class="prize-spotlight-perks-grid">
+                <div class="spotlight-perk-item">
+                  <div class="perk-icon">💰</div>
+                  <div class="perk-text">
+                    <strong>₹8,000 Cash Pool</strong>
+                    <span>Cash rewards awarded to the standout championship crews</span>
+                  </div>
+                </div>
+                <div class="spotlight-perk-item">
+                  <div class="perk-icon">🥇</div>
+                  <div class="perk-text">
+                    <strong>CineTech Trophies & Medals</strong>
+                    <span>Exclusive Gold & Silver DevForge Championship Trophies</span>
+                  </div>
+                </div>
+                <div class="spotlight-perk-item">
+                  <div class="perk-icon">📜</div>
+                  <div class="perk-text">
+                    <strong>Certificates & Dev Kits</strong>
+                    <span>Official verified certificates and exclusive DevForge swag kits</span>
+                  </div>
+                </div>
+                <div class="spotlight-perk-item">
+                  <div class="perk-icon">🚀</div>
+                  <div class="perk-text">
+                    <strong>Mentorship & Industry Pitch</strong>
+                    <span>Direct networking, incubation access & angel pitch opportunities</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Multi-Step Crew Registration -->
+      <section id="register" class="registration-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">AUDITIONS & CREW ENTRY</div>
+            <h2 class="section-title">REGISTER YOUR <span class="text-gold">HACKATHON CREW</span></h2>
+            <p class="section-subtitle">
+              Fill in your crew roles, select your domain track, and submit your team registration for DevForge 2026!
+            </p>
+          </div>
+
+          <div class="reg-layout">
+            <!-- Registration Form Card -->
+            <div class="reg-form-card">
+              <!-- Step Wizard -->
+              <div class="step-wizard">
+                <div class="wizard-step-node active" data-step="1">1</div>
+                <div class="wizard-step-node" data-step="2">2</div>
+                <div class="wizard-step-node" data-step="3">3</div>
+              </div>
+
+              <form id="crew-reg-form">
+                <!-- Step 1: Production Banner Info -->
+                <div class="form-step active" data-step="1">
+                  <h3 style="margin-bottom: 20px; font-size: 1.25rem;">🎬 Act 1: Production Banner & Track</h3>
+                  
+                  <div class="form-group">
+                    <label class="form-label" for="reg-team-name">Movie / Team Banner Name <span class="req">*</span></label>
+                    <input type="text" id="reg-team-name" class="form-input" placeholder="e.g., Leo Tech Creators, Thalapathy Coders" value="Leo Tech Creations" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="reg-track">Select Hackathon Theme Track <span class="req">*</span></label>
+                    <select id="reg-track" class="form-select" required>
+                      <option value="cyber-fullstack">🛡️ Cybersecurity + Fullstack</option>
+                      <option value="mobile-app">📱 Mobile App Development</option>
+                      <option value="enterprise-app">🏢 Enterprise Application Architecture</option>
+                      <option value="ai-ml">🤖 AI & Machine Learning</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Step 2: Cast & Crew Roles (Team Lead + 3 Members) -->
+                <div class="form-step" data-step="2">
+                  <h3 style="margin-bottom: 24px; font-size: 1.25rem;">👥 Act 2: Team Members (1 Team Lead + 3 Members)</h3>
+
+                  <!-- 1. Team Lead -->
+                  <div class="member-fieldset-card">
+                    <div class="member-fieldset-header">
+                      <span class="member-badge lead-badge">👑 Team Lead (Participant 1)</span>
+                    </div>
+                    <div class="form-grid-2">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-lead-name">Full Name <span class="req">*</span></label>
+                        <input type="text" id="reg-lead-name" class="form-input" placeholder="e.g., Vijay Kumar" value="Vijay Kumar" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-lead-roll">Roll Number <span class="req">*</span></label>
+                        <input type="text" id="reg-lead-roll" class="form-input" placeholder="e.g., 22CS101" value="22CS101" required />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="reg-lead-email">Mail ID (Email) <span class="req">*</span></label>
+                      <input type="email" id="reg-lead-email" class="form-input" placeholder="lead@example.com" value="vijay.lead@devforge.io" required />
+                    </div>
+                    <div class="form-grid-3">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-lead-year">Year <span class="req">*</span></label>
+                        <select id="reg-lead-year" class="form-select" required>
+                          <option value="1st Year">1st Year</option>
+                          <option value="2nd Year">2nd Year</option>
+                          <option value="3rd Year" selected>3rd Year</option>
+                          <option value="4th Year">4th Year</option>
+                          <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-lead-dept">Department <span class="req">*</span></label>
+                        <input type="text" id="reg-lead-dept" class="form-input" placeholder="e.g., CSE / IT / AI&DS" value="CSE" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-lead-sec">Section <span class="req">*</span></label>
+                        <input type="text" id="reg-lead-sec" class="form-input" placeholder="e.g., A / B / C" value="A" required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2. Team Member 1 -->
+                  <div class="member-fieldset-card">
+                    <div class="member-fieldset-header">
+                      <span class="member-badge">⭐ Team Member 1 (Participant 2)</span>
+                    </div>
+                    <div class="form-grid-2">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m1-name">Full Name <span class="req">*</span></label>
+                        <input type="text" id="reg-m1-name" class="form-input" placeholder="Member 1 Name" value="Karthik R" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m1-roll">Roll Number <span class="req">*</span></label>
+                        <input type="text" id="reg-m1-roll" class="form-input" placeholder="e.g., 22CS102" value="22CS102" required />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="reg-m1-email">Mail ID (Email) <span class="req">*</span></label>
+                      <input type="email" id="reg-m1-email" class="form-input" placeholder="member1@example.com" value="karthik@devforge.io" required />
+                    </div>
+                    <div class="form-grid-3">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m1-year">Year <span class="req">*</span></label>
+                        <select id="reg-m1-year" class="form-select" required>
+                          <option value="1st Year">1st Year</option>
+                          <option value="2nd Year">2nd Year</option>
+                          <option value="3rd Year" selected>3rd Year</option>
+                          <option value="4th Year">4th Year</option>
+                          <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m1-dept">Department <span class="req">*</span></label>
+                        <input type="text" id="reg-m1-dept" class="form-input" placeholder="e.g., CSE / IT" value="CSE" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m1-sec">Section <span class="req">*</span></label>
+                        <input type="text" id="reg-m1-sec" class="form-input" placeholder="e.g., A / B" value="A" required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3. Team Member 2 -->
+                  <div class="member-fieldset-card">
+                    <div class="member-fieldset-header">
+                      <span class="member-badge">⭐ Team Member 2 (Participant 3)</span>
+                    </div>
+                    <div class="form-grid-2">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m2-name">Full Name <span class="req">*</span></label>
+                        <input type="text" id="reg-m2-name" class="form-input" placeholder="Member 2 Name" value="Anirudh S" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m2-roll">Roll Number <span class="req">*</span></label>
+                        <input type="text" id="reg-m2-roll" class="form-input" placeholder="e.g., 22IT105" value="22IT105" required />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="reg-m2-email">Mail ID (Email) <span class="req">*</span></label>
+                      <input type="email" id="reg-m2-email" class="form-input" placeholder="member2@example.com" value="anirudh@devforge.io" required />
+                    </div>
+                    <div class="form-grid-3">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m2-year">Year <span class="req">*</span></label>
+                        <select id="reg-m2-year" class="form-select" required>
+                          <option value="1st Year">1st Year</option>
+                          <option value="2nd Year">2nd Year</option>
+                          <option value="3rd Year" selected>3rd Year</option>
+                          <option value="4th Year">4th Year</option>
+                          <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m2-dept">Department <span class="req">*</span></label>
+                        <input type="text" id="reg-m2-dept" class="form-input" placeholder="e.g., IT / CSE" value="IT" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m2-sec">Section <span class="req">*</span></label>
+                        <input type="text" id="reg-m2-sec" class="form-input" placeholder="e.g., A / B" value="B" required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4. Team Member 3 -->
+                  <div class="member-fieldset-card">
+                    <div class="member-fieldset-header">
+                      <span class="member-badge">⭐ Team Member 3 (Participant 4)</span>
+                    </div>
+                    <div class="form-grid-2">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m3-name">Full Name <span class="req">*</span></label>
+                        <input type="text" id="reg-m3-name" class="form-input" placeholder="Member 3 Name" value="Lokesh K" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m3-roll">Roll Number <span class="req">*</span></label>
+                        <input type="text" id="reg-m3-roll" class="form-input" placeholder="e.g., 22AI108" value="22AI108" required />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="reg-m3-email">Mail ID (Email) <span class="req">*</span></label>
+                      <input type="email" id="reg-m3-email" class="form-input" placeholder="member3@example.com" value="lokesh@devforge.io" required />
+                    </div>
+                    <div class="form-grid-3">
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m3-year">Year <span class="req">*</span></label>
+                        <select id="reg-m3-year" class="form-select" required>
+                          <option value="1st Year">1st Year</option>
+                          <option value="2nd Year">2nd Year</option>
+                          <option value="3rd Year" selected>3rd Year</option>
+                          <option value="4th Year">4th Year</option>
+                          <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m3-dept">Department <span class="req">*</span></label>
+                        <input type="text" id="reg-m3-dept" class="form-input" placeholder="e.g., AI&DS / CSE" value="AI&DS" required />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="reg-m3-sec">Section <span class="req">*</span></label>
+                        <input type="text" id="reg-m3-sec" class="form-input" placeholder="e.g., A / B" value="A" required />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3: Movie Pitch & Plot -->
+                <div class="form-step" data-step="3">
+                  <h3 style="margin-bottom: 20px; font-size: 1.25rem;">📜 Act 3: Project Pitch Synopsis</h3>
+
+                  <div class="form-group">
+                    <label class="form-label" for="reg-pitch-title">Movie / Project Title</label>
+                    <input type="text" id="reg-pitch-title" class="form-input" placeholder="e.g., Real-time AI Tamil Lip-Sync Generator" value="Zero-Trust Sentinel & Web App Shield" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="reg-pitch-synopsis">Pitch Plot Synopsis</label>
+                    <textarea id="reg-pitch-synopsis" class="form-textarea" placeholder="Describe the problem, technological innovation, and Kollywood impact...">Real-time AI threat intelligence, zero-trust token authentication, and resilient fullstack web architecture.</textarea>
+                  </div>
+                </div>
+
+                <!-- Form Wizard Navigation Controls -->
+                <div class="form-nav-buttons">
+                  <button type="button" id="btn-prev-step" class="btn btn-secondary" style="display: none;">
+                    ⬅️ Previous Act
+                  </button>
+                  <button type="button" id="btn-next-step" class="btn btn-primary" style="margin-left: auto;">
+                    Next Act ➡️
+                  </button>
+                  <button type="submit" id="btn-submit-reg" class="btn btn-crimson" style="display: none; margin-left: auto;">
+                    🚀 Confirm & Submit Registration!
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div style="margin-top: 20px; text-align: center;">
+              <button id="view-crews-btn" class="btn btn-secondary btn-sm">
+                👥 View Registered Crews Roster
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">CLARIFICATIONS & BRIEFING</div>
+            <h2 class="section-title">FREQUENTLY ASKED <span class="text-gold">QUESTIONS</span></h2>
+            <p class="section-subtitle">
+              Everything you need to know about joining the biggest CineTech hackathon in South India.
+            </p>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item active">
+              <button class="faq-question">
+                <span>Who can participate in DevForge '26?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 200px;">
+                Anyone passionate about software, cybersecurity, fullstack, mobile apps, enterprise applications, and AI/ML is welcome! Form a team of 4 members (1 Team Lead + 3 Members) and register.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Is prior filmmaking knowledge required?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                No! The tracks focus on deep tech engineering, software development, cybersecurity, mobile & enterprise architectures, and artificial intelligence.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What are the team size constraints?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Each team must have <strong>1 Team Lead and 3 Team Members</strong> (4 members per team).
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Are API credits and GPU cloud servers provided?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes! All registered crews receive exclusive sponsor API credits (LLM tokens, GPU compute instances, and 3D rendering clusters) during the 24-hour hackathon.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Organizer / Registered Crews Modal -->
+      <div id="crew-modal-overlay" class="modal-overlay">
+        <div class="modal-card">
+          <button id="close-crew-modal" class="modal-close-btn" aria-label="Close modal">✕</button>
+          <div class="section-tag">ORGANIZER DESK</div>
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 8px;">
+            🎬 REGISTERED <span class="text-gold">DEVFORGE CREWS</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+            Live roster of registered teams competing in DevForge '26.
+          </p>
+
+          <div style="overflow-x: auto;">
+            <table class="crew-table">
+              <thead>
+                <tr>
+                  <th>Team Banner</th>
+                  <th>Theme Track</th>
+                  <th>Team Lead</th>
+                  <th>Pass ID</th>
+                </tr>
+              </thead>
+              <tbody id="crew-table-body">
+                <!-- Dynamically injected rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-logo">
+              <div class="brand-icon">🎬</div>
+              <div class="brand-title">
+                DEVFORGE
+                <span class="brand-sub">CINETECH '26</span>
+              </div>
+            </div>
+            <p class="footer-brand-desc">
+              The premier CineTech Hackathon celebrating Tamil cinema innovation, mass storytelling, and next-generation engineering.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#hero">Opening Scene</a></li>
+              <li><a href="#actors">Superstars Arena</a></li>
+              <li><a href="#tracks">Box-Office Tracks</a></li>
+              <li><a href="#schedule">Screenplay</a></li>
+              <li><a href="#register">Crew Registration</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Hackathon Themes</h4>
+            <ul class="footer-links">
+              <li><a href="#tracks">Cybersecurity + Fullstack</a></li>
+              <li><a href="#tracks">Mobile App</a></li>
+              <li><a href="#tracks">Enterprise App</a></li>
+              <li><a href="#tracks">AI & Machine Learning</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Production Partners</h4>
+            <ul class="footer-links">
+              <li><a href="#prizes">Sun Tech Studios</a></li>
+              <li><a href="#prizes">Lyca AI Labs</a></li>
+              <li><a href="#prizes">Red Giant Cloud</a></li>
+              <li><a href="#prizes">AGS Ventures</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 DevForge CineTech Hackathon (DevForge '26). All Rights Reserved.</div>
+          <div style="font-family: var(--font-mono); color: var(--accent-gold);">
+            MADE WITH MASS ENERGY & ZERO BUGS ⚡
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/audio.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/actors.js"></script>
+  <script src="js/dialogues.js"></script>
+  <script src="js/registration.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
