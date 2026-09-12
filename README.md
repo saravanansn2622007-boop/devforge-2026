@@ -24,7 +24,6 @@
 ---
 
 ## ✨ Features
-- **🌟 Interactive Superstars Arena**: 3D parallax tilt character cards featuring Superstar Rajinikanth, Thalapathy Vijay, Chitti Robo 2.0, Kamal Haasan, Thala Ajith, and Suriya with signature animations and whistle hype counters (*Strictly 1 vote per ID*).
 - **🎬 Kollywood Famous Punchlines (Easter Egg Generator)**: Cinema clapperboard generator featuring authentic legendary Kollywood movie punches with take counters, dynamic hero spotlights, and one-click clipboard copy.
 - **👥 Multi-Step Registration Form**: Structured 3-step registration wizard capturing:
   - Team Banner & Track selection
