@@ -218,23 +218,35 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', countUpStats);
   countUpStats(); // Initial check
 
-  // 9. Mobile Menu Toggle
+  // 9. Mobile Menu Toggle & Navigation Control
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isVisible = navMenu.style.display === 'flex';
-      navMenu.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '70px';
-        navMenu.style.left = '0';
-        navMenu.style.right = '0';
-        navMenu.style.background = 'rgba(7, 6, 11, 0.98)';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.padding = '24px';
-        navMenu.style.borderBottom = '1px solid var(--border-gold)';
-        navMenu.style.backdropFilter = 'blur(20px)';
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('mobile-open');
+      mobileToggle.textContent = isOpen ? '✕' : '☰';
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      if (window.cinemaAudio) window.cinemaAudio.playClick();
+    });
+
+    // Close mobile menu when clicking any nav link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('mobile-open');
+        mobileToggle.textContent = '☰';
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close mobile menu when tapping outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('mobile-open') && !navMenu.contains(e.target) && e.target !== mobileToggle) {
+        navMenu.classList.remove('mobile-open');
+        mobileToggle.textContent = '☰';
+        mobileToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }

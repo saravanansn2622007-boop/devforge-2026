@@ -8,6 +8,7 @@ class CinemaAudioEngine {
     this.ctx = null;
     this.isMuted = false;
     this.initAudioContext();
+    this.setupMobileTouchUnlock();
   }
 
   initAudioContext() {
@@ -21,9 +22,24 @@ class CinemaAudioEngine {
     }
   }
 
+  setupMobileTouchUnlock() {
+    const unlock = () => {
+      this.resume();
+      document.removeEventListener('touchstart', unlock);
+      document.removeEventListener('touchend', unlock);
+      document.removeEventListener('click', unlock);
+    };
+    document.addEventListener('touchstart', unlock, { passive: true });
+    document.addEventListener('touchend', unlock, { passive: true });
+    document.addEventListener('click', unlock, { passive: true });
+  }
+
   resume() {
+    if (!this.ctx) {
+      this.initAudioContext();
+    }
     if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume();
+      this.ctx.resume().catch(() => {});
     }
   }
 
