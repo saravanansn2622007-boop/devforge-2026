@@ -30,7 +30,6 @@ const resolveFilePath = (reqUrl) => {
   }
   const safePath = path.normalize(cleanPath).replace(/^(\.\.[\/\\])+/, '');
   
-  // Try __dirname first, then process.cwd()
   const candidates = [
     path.join(__dirname, safePath),
     path.join(process.cwd(), safePath),

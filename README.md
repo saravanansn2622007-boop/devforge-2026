@@ -43,7 +43,7 @@
 2. **Serve with any HTTP server**:
    ```bash
    # Using Node.js
-   node local-server.js
+   node server.js
 
    # Or using Python
    python -m http.server 3000

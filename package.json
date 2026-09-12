@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "DevForge 2026 - Premier 24-Hour CineTech Hackathon Platform",
+  "main": "server.js",
   "scripts": {
-    "dev": "node local-server.js",
-    "start": "node local-server.js"
+    "build": "echo Static build complete",
+    "start": "node server.js",
+    "dev": "node server.js"
   }
 }
