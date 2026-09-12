@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-const PUBLIC_DIR = __dirname;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -24,51 +23,59 @@ const MIME_TYPES = {
   '.webp': 'image/webp'
 };
 
-const requestHandler = (req, res) => {
-  let reqPath = decodeURI(req.url.split('?')[0]);
-  if (reqPath === '/' || reqPath === '') {
-    reqPath = '/index.html';
+const resolveFilePath = (reqUrl) => {
+  let cleanPath = decodeURI((reqUrl || '/').split('?')[0]);
+  if (cleanPath === '/' || cleanPath === '') {
+    cleanPath = '/index.html';
+  }
+  const safePath = path.normalize(cleanPath).replace(/^(\.\.[\/\\])+/, '');
+  
+  // Try __dirname first, then process.cwd()
+  const candidates = [
+    path.join(__dirname, safePath),
+    path.join(process.cwd(), safePath),
+    path.join(__dirname, 'index.html'),
+    path.join(process.cwd(), 'index.html')
+  ];
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      const stat = fs.statSync(candidate);
+      if (stat.isDirectory()) {
+        const nestedIndex = path.join(candidate, 'index.html');
+        if (fs.existsSync(nestedIndex)) return nestedIndex;
+      } else {
+        return candidate;
+      }
+    }
   }
 
-  const safePath = path.normalize(reqPath).replace(/^(\.\.[\/\\])+/, '');
-  let filePath = path.join(PUBLIC_DIR, safePath);
+  return path.join(__dirname, 'index.html');
+};
 
-  fs.stat(filePath, (err, stats) => {
-    if (err) {
-      // If not found, try fallback to index.html
-      const fallbackPath = path.join(PUBLIC_DIR, 'index.html');
-      fs.readFile(fallbackPath, (fbErr, fbContent) => {
-        if (fbErr) {
-          res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-          res.end('404 Not Found');
-          return;
-        }
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        res.end(fbContent);
-      });
+const requestHandler = (req, res) => {
+  try {
+    const filePath = resolveFilePath(req.url);
+
+    if (!fs.existsSync(filePath)) {
+      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+      res.end('404 Not Found');
       return;
-    }
-
-    if (stats.isDirectory()) {
-      filePath = path.join(filePath, 'index.html');
     }
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+    const content = fs.readFileSync(filePath);
 
-    fs.readFile(filePath, (readErr, content) => {
-      if (readErr) {
-        res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
-        res.end('500 Internal Server Error');
-        return;
-      }
-      res.writeHead(200, {
-        'Content-Type': contentType,
-        'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable'
-      });
-      res.end(content);
+    res.writeHead(200, {
+      'Content-Type': contentType,
+      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable'
     });
-  });
+    res.end(content);
+  } catch (err) {
+    res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('500 Internal Server Error: ' + (err.message || ''));
+  }
 };
 
 const server = http.createServer(requestHandler);
@@ -79,6 +86,5 @@ if (require.main === module) {
   });
 }
 
-// Export for Vercel Serverless Function & Node entrypoints
 module.exports = requestHandler;
 module.exports.default = requestHandler;
