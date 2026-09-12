@@ -24,9 +24,9 @@ const MIME_TYPES = {
   '.webp': 'image/webp'
 };
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
-  if (reqPath === '/') {
+  if (reqPath === '/' || reqPath === '') {
     reqPath = '/index.html';
   }
 
@@ -35,8 +35,17 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (err) {
-      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end('404 Not Found');
+      // If not found, try fallback to index.html
+      const fallbackPath = path.join(PUBLIC_DIR, 'index.html');
+      fs.readFile(fallbackPath, (fbErr, fbContent) => {
+        if (fbErr) {
+          res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+          res.end('404 Not Found');
+          return;
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(fbContent);
+      });
       return;
     }
 
@@ -53,12 +62,23 @@ const server = http.createServer((req, res) => {
         res.end('500 Internal Server Error');
         return;
       }
-      res.writeHead(200, { 'Content-Type': contentType });
+      res.writeHead(200, {
+        'Content-Type': contentType,
+        'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable'
+      });
       res.end(content);
     });
   });
-});
+};
 
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`DevForge 2026 local server running at http://localhost:${PORT}`);
-});
+const server = http.createServer(requestHandler);
+
+if (require.main === module) {
+  server.listen(PORT, '0.0.0.0', () => {
+    console.log(`DevForge 2026 server running at http://localhost:${PORT}`);
+  });
+}
+
+// Export for Vercel Serverless Function & Node entrypoints
+module.exports = requestHandler;
+module.exports.default = requestHandler;
