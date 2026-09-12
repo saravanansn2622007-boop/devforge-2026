@@ -2,10 +2,9 @@
   "name": "devforge-2026",
   "version": "1.0.0",
   "description": "Kollywood CineTech Hackathon Platform",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "echo 'Static build ready'"
+    "build": "echo 'Static build complete'",
+    "start": "node server.js"
   },
   "keywords": [
     "hackathon",
