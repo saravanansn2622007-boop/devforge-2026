@@ -1,35 +1,34 @@
-# DEVFORGE 2026 🎬⚡
-> **The Ultimate 24-Hour Kollywood CineTech Hackathon Platform**  
-> *Where Tamil Cinema Mass Culture meets Cutting-Edge Engineering.*
+# DEVFORGE 2026 ⚡
+> **The Premier 24-Hour National CineTech & Deep-Tech Hackathon Platform**  
+> *Fusing High-Impact Storytelling with Enterprise-Grade Software Engineering.*
 
 ---
 
 ## 🌟 Overview
-**DevForge 2026** is a high-octane 24-hour non-stop hackathon website featuring immersive Kollywood superstar themes, interactive 3D audio synthesis, dynamic character arenas, multi-step registration with structured participant schemas, and easter egg generators.
+**DevForge 2026** is an enterprise-grade, full-stack 24-hour hackathon web application. It features immersive atmospheric modes, real-time Web Audio synthesis, interactive leader quotes, structured multi-step team registration, automatic digital pass generation, and static CDN deployment.
 
 - 🗓️ **Dates**: September 22 & 23, 2026
 - ⏱️ **Duration**: 24-Hour Non-Stop Sprint
-- 🏆 **Total Prize Pool**: ₹8,000
-- 👥 **Team Size**: 1 Team Lead + 3 Members (4 Members per team)
-- 🚀 **Capacity**: 160 Hackers & Creators
+- 🏆 **Total Prize Pool**: ₹8,000 (Cash awards, championship trophies, incubation access)
+- 👥 **Team Cohort**: 4 Members per Squad (1 Team Lead + 3 Members)
+- 🌐 **Platform**: Fully responsive, ultra-fast static web app hosted on Vercel
 
 ---
 
-## 🎯 The 4 Box-Office Tracks
-1. **🛡️ Cybersecurity + Fullstack**: Zero-Trust Sentinel, threat intelligence, and hardened web backends.
-2. **📱 Mobile App Development**: High-speed, responsive mobile apps, real-time collaboration, and hybrid platforms.
-3. **🏢 Enterprise Application Architecture**: High-concurrency microservices, distributed workflows, and cloud databases.
-4. **🤖 AI & Machine Learning**: Neural networks, predictive models, voice synthesis, and intelligent automation.
+## 🎯 Engineering Challenge Tracks
+1. **🛡️ Cybersecurity & Hardened Fullstack**: Zero-Trust Sentinel, automated threat detection, and resilient web services.
+2. **📱 High-Performance Mobile Systems**: Native/cross-platform mobile apps, offline-first synchronization, and edge intelligence.
+3. **🏢 Distributed Enterprise Architecture**: Microservices meshes, event-driven streaming, and scalable cloud databases.
+4. **🤖 Applied AI & Machine Learning**: Foundational LLMs, autonomous agents, neural computer vision, and real-time inference.
 
 ---
 
-## ✨ Features
-- **🎬 Kollywood Famous Punchlines (Easter Egg Generator)**: Cinema clapperboard generator featuring authentic legendary Kollywood movie punches with take counters, dynamic hero spotlights, and one-click clipboard copy.
-- **👥 Multi-Step Registration Form**: Structured 3-step registration wizard capturing:
-  - Team Banner & Track selection
-  - Detailed participant profiles (*Name, Roll Number, Year, Department, Section, Mail ID*) for all 4 crew members
-  - Project Pitch Synopsis
-- **🎵 Cinema Web Audio Engine**: Custom real-time sound synthesizer (whistle fanfares, bass drops, clapper snaps).
+## ⚡ Key Platform Features
+- **⚡ Atmospheric Themes Engine**: Seamless switching between Executive Gold, Cyber Crimson, Quantum Cyan, and Minimalist Slate.
+- **🎵 Real-Time Web Audio Engine**: Synthesizer sound effects, dynamic fanfares, and original voice dialogues.
+- **👥 3-Phase Team Registration Wizard**: Comprehensive multi-step team validation capturing Team Banner, Track selection, complete squad details, and technical solution abstracts.
+- **🎫 Dynamic Digital Pass Generator**: Generates styled digital hackathon admission tickets with custom QR codes and print/download capability.
+- **🚀 Ultra-Fast Static CDN Delivery**: Zero-backend dependency, 100% static asset delivery optimized for Vercel.
 
 ---
 
@@ -41,19 +40,20 @@
    cd devforge-2026
    ```
 
-2. **Serve with any HTTP server (e.g. Node.js or Python)**:
+2. **Serve with any HTTP server**:
    ```bash
    # Using Node.js
-   npx serve .
+   node server.js
 
    # Or using Python
    python -m http.server 3000
    ```
 
 3. **Open in browser**:
-   Navigate to `http://localhost:3000`.
+   Navigate to `http://localhost:3000` or the live production deployment at `https://devforge-2026.vercel.app`.
 
 ---
 
 ## 📜 License
 MIT License. Built for **DevForge 2026**.
+
