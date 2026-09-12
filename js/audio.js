@@ -167,6 +167,122 @@ class CinemaAudioEngine {
     osc.start(now);
     osc.stop(now + 0.04);
   }
+
+  // 6. Dialogue Audio & Superstar Voice Engine
+  playActorVoice(heroKey, dialogueText, audioFilePath, onStart = null, onEnd = null) {
+    if (this.isMuted) return;
+    this.resume();
+
+    // Stop any ongoing speech or audio
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    if (this.currentAudioElement) {
+      this.currentAudioElement.pause();
+      this.currentAudioElement = null;
+    }
+
+    // Try playing actual MP3 audio file first if provided
+    if (audioFilePath) {
+      const audio = new Audio(audioFilePath);
+      this.currentAudioElement = audio;
+
+      let hasStarted = false;
+
+      audio.addEventListener('play', () => {
+        hasStarted = true;
+        if (onStart) onStart();
+      });
+
+      audio.addEventListener('ended', () => {
+        if (onEnd) onEnd();
+        this.currentAudioElement = null;
+      });
+
+      audio.addEventListener('error', () => {
+        // MP3 not yet found or error loading, fall back to AI superstar voice synthesis
+        console.info(`Audio file '${audioFilePath}' not found or unplayable. Using Superstar Voice Synthesizer.`);
+        this.currentAudioElement = null;
+        this.synthesizeSuperstarVoice(heroKey, dialogueText, onStart, onEnd);
+      });
+
+      audio.play().catch(err => {
+        console.warn("Audio play prevented or missing:", err);
+        this.currentAudioElement = null;
+        this.synthesizeSuperstarVoice(heroKey, dialogueText, onStart, onEnd);
+      });
+      return;
+    }
+
+    // Fallback: Synthesize Voice
+    this.synthesizeSuperstarVoice(heroKey, dialogueText, onStart, onEnd);
+  }
+
+  // 7. Superstar Tuned Speech Synthesizer
+  synthesizeSuperstarVoice(heroKey, text, onStart = null, onEnd = null) {
+    if (this.isMuted) return;
+
+    // Trigger hero-specific sound effects stinger in background
+    if (heroKey === 'superstar') {
+      this.playSuperstarWhistle();
+    } else if (heroKey === 'chitti') {
+      this.playChittiLaser();
+    } else if (heroKey === 'thalapathy' || heroKey === 'ulaganayagan') {
+      this.playMassBassDrop();
+    } else {
+      this.playClapperSnap();
+    }
+
+    if (!('speechSynthesis' in window)) {
+      if (onStart) onStart();
+      setTimeout(() => { if (onEnd) onEnd(); }, 1500);
+      return;
+    }
+
+    // Clean text for speech
+    const cleanText = text.replace(/[\.]{2,}/g, '. ').replace(/[!]+/g, '!');
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+
+    // Actor-specific pitch and speech rates
+    const profiles = {
+      superstar: { pitch: 0.85, rate: 1.0, lang: 'ta-IN' },
+      thalapathy: { pitch: 1.08, rate: 1.15, lang: 'ta-IN' },
+      thala: { pitch: 0.88, rate: 0.98, lang: 'ta-IN' },
+      ulaganayagan: { pitch: 0.92, rate: 0.94, lang: 'ta-IN' },
+      chitti: { pitch: 1.45, rate: 1.25, lang: 'ta-IN' },
+      suriya: { pitch: 0.96, rate: 1.08, lang: 'ta-IN' }
+    };
+
+    const config = profiles[heroKey] || { pitch: 1.0, rate: 1.0, lang: 'ta-IN' };
+    utterance.pitch = config.pitch;
+    utterance.rate = config.rate;
+
+    // Pick best available voice (Tamil if available, otherwise Indian English or default)
+    const voices = window.speechSynthesis.getVoices();
+    const tamilVoice = voices.find(v => v.lang.startsWith('ta') || v.name.toLowerCase().includes('tamil'));
+    const indianVoice = voices.find(v => v.lang === 'en-IN');
+    
+    if (tamilVoice) {
+      utterance.voice = tamilVoice;
+    } else if (indianVoice) {
+      utterance.voice = indianVoice;
+    }
+
+    utterance.onstart = () => {
+      if (onStart) onStart();
+    };
+
+    utterance.onend = () => {
+      if (onEnd) onEnd();
+    };
+
+    utterance.onerror = (e) => {
+      console.warn("SpeechSynthesis error:", e);
+      if (onEnd) onEnd();
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
 }
 
 // Export singleton

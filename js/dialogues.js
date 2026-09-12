@@ -1,6 +1,6 @@
 /* ==========================================================================
    DEVFORGE 2026 (DevForge '26)
-   Kollywood Mass Punch Dialogue Tech Generator - Cinema Engine Edition
+   Kollywood Iconic Punch Dialogue Engine with Actor Voice Audio Playback
    ========================================================================== */
 
 const kollywoodDialogues = [
@@ -9,37 +9,71 @@ const kollywoodDialogues = [
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
     avatar: "👑",
-    tag: "Thalaivar Mass",
-    dialogue: "Naan oru thadava code commit panna... noora thadava run aana maathiri!",
+    tag: "Baashha Mass",
+    dialogue: "Naan oru thadava sonna... nooru thadava sonna madhiri!",
     movie: "Baashha (1995)",
-    context: "Clean Code & Git Commit Mastery"
+    context: "Iconic Mass Statement",
+    audioFile: "assets/audio/dialogues/rajini_baashha.mp3"
   },
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
     avatar: "🕶️",
     tag: "Padayappa Swag",
-    dialogue: "En vazhi... clean architecture vazhi! Production-ku vandha single tea shot-la zero-downtime deploy!",
+    dialogue: "En vazhi... thani vazhi! Seendadha!",
     movie: "Padayappa (1999)",
-    context: "Zero-Downtime Deployment & CI/CD"
+    context: "Signature Style & Attitude",
+    audioFile: "assets/audio/dialogues/rajini_padayappa.mp3"
   },
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
     avatar: "🦁",
     tag: "Jailer Hukum",
-    dialogue: "Alappara kelapparom... DevForge 2026-la first prize thookki koodave podium blast panrom!",
+    dialogue: "Hukum... Tiger Ka Hukum! Alappara kelapparom!",
     movie: "Jailer (2023)",
-    context: "Hackathon Championship Mindset"
+    context: "Blockbuster Tiger Roar",
+    audioFile: "assets/audio/dialogues/rajini_jailer.mp3"
   },
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
     avatar: "💸",
     tag: "Sivaji The Boss",
-    dialogue: "Kanna, panni dhan O(n^2) loop-la suthum... Singam epovum O(1) constant time-la single shot-la finish pannum!",
-    movie: "Sivaji (2007)",
-    context: "Algorithmic Time Complexity Optimization"
+    dialogue: "Kanna, panni dhan kootama varum... Singam single-ah dhan varum!",
+    movie: "Sivaji The Boss (2007)",
+    context: "Legendary Mass Punch",
+    audioFile: "assets/audio/dialogues/rajini_sivaji.mp3"
+  },
+  {
+    hero: "superstar",
+    heroName: "Superstar Rajinikanth",
+    avatar: "⚡",
+    tag: "Annamalai Roar",
+    dialogue: "Naan solradhaiyum seiven... solladdhaiyum seiven!",
+    movie: "Annamalai (1992)",
+    context: "Unbeatable Challenge",
+    audioFile: "assets/audio/dialogues/rajini_annamalai.mp3"
+  },
+  {
+    hero: "superstar",
+    heroName: "Superstar Rajinikanth",
+    avatar: "🌟",
+    tag: "Muthu Punch",
+    dialogue: "Naan eppo varuven, epdi varuven-nu yarukkum theriyadhu... Aana vara vendiya nerathula correct-ah vandhuduvain!",
+    movie: "Muthu (1995)",
+    context: "Timeless Entry Punch",
+    audioFile: "assets/audio/dialogues/rajini_muthu.mp3"
+  },
+  {
+    hero: "superstar",
+    heroName: "Superstar Rajinikanth",
+    avatar: "🔥",
+    tag: "Petta Swagger",
+    dialogue: "Kaali da... Petta paraak!",
+    movie: "Petta (2019)",
+    context: "Vintage Thalaivar Mass",
+    audioFile: "assets/audio/dialogues/rajini_petta.mp3"
   },
 
   // 2. Thalapathy Vijay
@@ -48,85 +82,164 @@ const kollywoodDialogues = [
     heroName: "Thalapathy Vijay",
     avatar: "🔥",
     tag: "Thuppakki Style",
-    dialogue: "I am waiting... for that 0 Errors, 0 Warnings, Production Build!",
+    dialogue: "I am waiting!",
     movie: "Thuppakki (2012)",
-    context: "Flawless Production Build Deployment"
+    context: "Ultimate Climax War Cry",
+    audioFile: "assets/audio/dialogues/vijay_thuppakki.mp3"
   },
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
     avatar: "⚔️",
     tag: "Leo Bloody Sweet",
-    dialogue: "Bloody Sweet! Serverless backend 100K concurrent requests handle panniduchu!",
+    dialogue: "Bloody Sweet!",
     movie: "Leo (2023)",
-    context: "High-Concurrency Cloud Architecture"
+    context: "LCU Badass Climax Catchphrase",
+    audioFile: "assets/audio/dialogues/vijay_leo.mp3"
   },
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "🎧",
-    tag: "Master Vibe",
-    dialogue: "Vathi coming othukko! AI neural network training convergence aagi 99.9% accuracy reach aayiduchu!",
-    movie: "Master (2021)",
-    context: "Deep Learning Model Convergence"
+    avatar: "🔫",
+    tag: "Pokkiri Attitude",
+    dialogue: "Oru vaati mudivu pannita... en pecha naane kekka maaten!",
+    movie: "Pokkiri (2007)",
+    context: "Unyielding Determination",
+    audioFile: "assets/audio/dialogues/vijay_pokkiri.mp3"
   },
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
     avatar: "⚡",
     tag: "Ghilli Mass",
-    dialogue: "Indha area, andha area, any track area... All 4 DevForge themes-layum namma code dhan king!",
+    dialogue: "Indha area, andha area, endha area-layum enakku bayam kidayadhu... All area-layum aiyya Ghilli da!",
     movie: "Ghilli (2004)",
-    context: "Cross-Track Dominance"
+    context: "All-Area Dominance",
+    audioFile: "assets/audio/dialogues/vijay_ghilli.mp3"
+  },
+  {
+    hero: "thalapathy",
+    heroName: "Thalapathy Vijay",
+    avatar: "🎭",
+    tag: "Mersal Swagger",
+    dialogue: "Neenga aala maathalaam... aana adhe aal thirumba varumpothu, Aandavane vandhaalum thadukka mudiyaadhu!",
+    movie: "Mersal (2017)",
+    context: "High Voltage Mass Warning",
+    audioFile: "assets/audio/dialogues/vijay_mersal.mp3"
+  },
+  {
+    hero: "thalapathy",
+    heroName: "Thalapathy Vijay",
+    avatar: "🎧",
+    tag: "Master Vibe",
+    dialogue: "Vathi coming othukko!",
+    movie: "Master (2021)",
+    context: "Swag Entry Beat",
+    audioFile: "assets/audio/dialogues/vijay_master.mp3"
   },
 
   // 3. Thala Ajith Kumar
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
-    avatar: "⚡",
+    avatar: "🎲",
     tag: "Mankatha Gaming",
-    dialogue: "En vazhi thani vazhi! No StackOverflow, no copy-paste... Only pure raw algorithmic logic!",
+    dialogue: "En vazhi thani vazhi... Vinayagam game starts now! Money Money Money... No rules!",
     movie: "Mankatha (2011)",
-    context: "Hardcore Algorithmic Problem Solving"
+    context: "Ruthless Anti-Hero Swagger",
+    audioFile: "assets/audio/dialogues/ajith_mankatha.mp3"
   },
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
     avatar: "🏍️",
     tag: "Billa Swagger",
-    dialogue: "Enna thedi bugs varalaam... Aana naan thedi pona oru memory leak kooda escape aagathu!",
+    dialogue: "I'm back! Enna thedi ethaavathu varalaam... Aana naan thedi pona oruthan kooda escape aaga mudiyaadhu!",
     movie: "Billa (2007)",
-    context: "Ruthless Bug Hunting & Security Pentesting"
+    context: "Deadly Style & Alpha Swag",
+    audioFile: "assets/audio/dialogues/ajith_billa.mp3"
   },
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
     avatar: "🏁",
     tag: "Vedalam Rage",
-    dialogue: "Theri panna poren! Microservices response time 2 milliseconds-la lock pannitaen!",
+    dialogue: "Theri panna poren... Theri!",
     movie: "Vedalam (2015)",
-    context: "Ultra Low-Latency Performance Tuning"
+    context: "Transformation Mass Outburst",
+    audioFile: "assets/audio/dialogues/ajith_vedalam.mp3"
+  },
+  {
+    hero: "thala",
+    heroName: "Thala Ajith Kumar",
+    avatar: "⚡",
+    tag: "Vivegam Willpower",
+    dialogue: "Never, ever, give up!",
+    movie: "Vivegam (2017)",
+    context: "Iron Willpower War Cry",
+    audioFile: "assets/audio/dialogues/ajith_vivegam.mp3"
+  },
+  {
+    hero: "thala",
+    heroName: "Thala Ajith Kumar",
+    avatar: "👑",
+    tag: "Varalaru Pride",
+    dialogue: "En vaazhkkaiyla ovvoru naalum, ovvoru nimishamum, yen ovvoru nodiyum naana sethukkitadhu da!",
+    movie: "Varalaru (2006)",
+    context: "Self-Made Legend Monologue",
+    audioFile: "assets/audio/dialogues/ajith_varalaru.mp3"
   },
 
-  // 4. Kamal Haasan (Vikram / LCU)
+  // 4. Kamal Haasan (Vikram / LCU / Nayakan)
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Vikram)",
     avatar: "🦅",
     tag: "LCU Commander",
-    dialogue: "Arambikalaangala? 24 hours-la enterprise cloud system architect panni full prototype deliver panrom!",
+    dialogue: "Aarambikkalaangala?",
     movie: "Vikram (2022)",
-    context: "Hackathon Kickoff Battlecry"
+    context: "LCU Commander Battle Cry",
+    audioFile: "assets/audio/dialogues/kamal_vikram.mp3"
+  },
+  {
+    hero: "ulaganayagan",
+    heroName: "Kamal Haasan (Vikram)",
+    avatar: "🔥",
+    tag: "Pathala Pathala",
+    dialogue: "Pathala Pathala... Sandhula vandhu kooda sandai poduven!",
+    movie: "Vikram (2022)",
+    context: "Fearless Ground Warfare",
+    audioFile: "assets/audio/dialogues/kamal_pathala.mp3"
   },
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Nayakan)",
     avatar: "🎭",
     tag: "Nayakan Philosophy",
-    dialogue: "Naalu peruku nalladhu nadakkum-na endha open-source PR-ayum merge pannalam thappey illa!",
+    dialogue: "Naalu perukku nalladhu nadakkum-na... edhuvume thappu illa!",
     movie: "Nayakan (1987)",
-    context: "Open Source Contribution Ethos"
+    context: "Legendary Godfather Morality",
+    audioFile: "assets/audio/dialogues/kamal_nayakan.mp3"
+  },
+  {
+    hero: "ulaganayagan",
+    heroName: "Kamal Haasan (Dasavathaaram)",
+    avatar: "🕉️",
+    tag: "Dasavathaaram Philosophy",
+    dialogue: "Kadavul illai-nu sollala... Irundha nalla irukkum-nu dhaan solren!",
+    movie: "Dasavathaaram (2008)",
+    context: "Intellectual Masterclass",
+    audioFile: "assets/audio/dialogues/kamal_dasavathaaram.mp3"
+  },
+  {
+    hero: "ulaganayagan",
+    heroName: "Kamal Haasan (Thevar Magan)",
+    avatar: "👑",
+    tag: "Thevar Magan Legacy",
+    dialogue: "Unakku vendiyadhai nee dhaan kettu vaanganum!",
+    movie: "Thevar Magan (1992)",
+    context: "Classic Cinema Golden Words",
+    audioFile: "assets/audio/dialogues/kamal_thevarmagan.mp3"
   },
 
   // 5. Chitti Robo 2.0
@@ -135,38 +248,92 @@ const kollywoodDialogues = [
     heroName: "Chitti Robo 2.0",
     avatar: "🤖",
     tag: "Robo Tech Overclock",
-    dialogue: "Speed 1 Terahertz, Memory 1 Zettabyte! Full-stack hackathon project built and deployed in 0.001 milliseconds!",
-    movie: "Enthiran 2.0 (2018)",
-    context: "Ultra High-Performance Computing"
+    dialogue: "Hello world! Memory 1 Zettabyte, speed 1 Terahertz! Chitti speed 1 THz!",
+    movie: "Enthiran (2010)",
+    context: "Super Android Initialization",
+    audioFile: "assets/audio/dialogues/chitti_enthiran.mp3"
   },
   {
     hero: "chitti",
     heroName: "Chitti Robo 2.0",
     avatar: "🔴",
     tag: "Red Neural Chip",
-    dialogue: "Security mode activated! Neural shield enabled. Zero DDoS, Zero SQL injections penetrated!",
+    dialogue: "Dot... Black sheep!",
     movie: "Enthiran (2010)",
-    context: "Cybersecurity & Fortress Hardening"
+    context: "Red Chip Rogue Rampage",
+    audioFile: "assets/audio/dialogues/chitti_blacksheep.mp3"
+  },
+  {
+    hero: "chitti",
+    heroName: "Chitti Robo 2.0",
+    avatar: "⚡",
+    tag: "Version 2.0 Reloaded",
+    dialogue: "I am 2.0! Version 2.0 reloaded!",
+    movie: "Enthiran 2.0 (2018)",
+    context: "Upgraded Titan Awakening",
+    audioFile: "assets/audio/dialogues/chitti_2point0.mp3"
+  },
+  {
+    hero: "chitti",
+    heroName: "Chitti Robo 2.0",
+    avatar: "💥",
+    tag: "Enthiran 2.0 Punch",
+    dialogue: "Kanna, 2.0 vandhuttaan... Game over!",
+    movie: "Enthiran 2.0 (2018)",
+    context: "Mass Villain Crushing Roar",
+    audioFile: "assets/audio/dialogues/chitti_gameover.mp3"
   },
 
-  // 6. Suriya (Chronos 24 / Rolex)
-  {
-    hero: "suriya",
-    heroName: "Suriya (Rolex / 24)",
-    avatar: "⏳",
-    tag: "Time Freeze Watch",
-    dialogue: "Oru nimisham time freeze panni bug-ah hot-patch panni live production-ku push panniruven!",
-    movie: "24 The Movie (2016)",
-    context: "Hot-Reloading & Live Patching"
-  },
+  // 6. Suriya (Chronos 24 / Rolex / Singam)
   {
     hero: "suriya",
     heroName: "Suriya (Rolex)",
     avatar: "🦂",
     tag: "Rolex Sir",
-    dialogue: "Sir, oru 24 hours time kudunga... Enterprise app ready panni pitch desk-la rule pannidren!",
+    dialogue: "Sir... Just call me Rolex!",
     movie: "Vikram (2022)",
-    context: "High-Stakes Demo Presentation"
+    context: "LCU Kingpin Entry Punch",
+    audioFile: "assets/audio/dialogues/suriya_rolex.mp3"
+  },
+  {
+    hero: "suriya",
+    heroName: "Suriya (Singam)",
+    avatar: "🦁",
+    tag: "Durai Singam",
+    dialogue: "Ongi adicha ondra ton weightu da... Paakkuriya! Singam da!",
+    movie: "Singam (2010)",
+    context: "Thunderous 1.5-Ton Punch",
+    audioFile: "assets/audio/dialogues/suriya_singam.mp3"
+  },
+  {
+    hero: "suriya",
+    heroName: "Suriya (Chronos 24)",
+    avatar: "⏳",
+    tag: "Time Freeze Watch",
+    dialogue: "Time-ah control panna mudiyum-na... Ulagathaye control pannalaam!",
+    movie: "24 The Movie (2016)",
+    context: "Temporal Mastery",
+    audioFile: "assets/audio/dialogues/suriya_24.mp3"
+  },
+  {
+    hero: "suriya",
+    heroName: "Suriya (Ayan)",
+    avatar: "💎",
+    tag: "Ayan Deva",
+    dialogue: "Namma ethula step eduthu vechaalum... adhula top-la irukkanum!",
+    movie: "Ayan (2009)",
+    context: "Peak Hustle & Mastery",
+    audioFile: "assets/audio/dialogues/suriya_ayan.mp3"
+  },
+  {
+    hero: "suriya",
+    heroName: "Suriya (Ghajini)",
+    avatar: "🧠",
+    tag: "Ghajini Legend",
+    dialogue: "Sanjay Ramaswamy... Remember the name!",
+    movie: "Ghajini (2005)",
+    context: "Unforgettable Titan Legacy",
+    audioFile: "assets/audio/dialogues/suriya_ghajini.mp3"
   }
 ];
 
@@ -174,7 +341,7 @@ class DialogueEngine {
   constructor() {
     this.currentHero = "all";
     this.takeNumber = 1;
-    this.isSpeaking = false;
+    this.isPlayingVoice = false;
 
     // DOM Elements
     this.card = document.getElementById('dialogue-main-card');
@@ -182,6 +349,7 @@ class DialogueEngine {
     this.dialogueAuthor = document.getElementById('dialogue-speaker');
     this.heroChips = document.querySelectorAll('.hero-chip');
     this.generateBtn = document.getElementById('generate-dialogue-btn');
+    this.playVoiceBtn = document.getElementById('play-voice-btn');
     this.copyBtn = document.getElementById('copy-dialogue-btn');
     this.takeNumEl = document.getElementById('dialogue-take-num');
     this.emblemEl = document.getElementById('hero-dynamic-emblem');
@@ -213,6 +381,13 @@ class DialogueEngine {
         if (this.takeNumEl) this.takeNumEl.textContent = this.takeNumber;
         this.getRandomDialogue();
         if (window.cinemaAudio) window.cinemaAudio.playMassBassDrop();
+      });
+    }
+
+    // Play Actor Voice button
+    if (this.playVoiceBtn) {
+      this.playVoiceBtn.addEventListener('click', () => {
+        this.playCurrentVoice();
       });
     }
 
@@ -252,15 +427,8 @@ class DialogueEngine {
       this.emblemEl.textContent = item.avatar;
     }
 
-    // Trigger Equalizer Pulse
-    if (this.equalizerEl) {
-      this.equalizerEl.classList.add('active');
-      setTimeout(() => {
-        if (!this.isSpeaking && this.equalizerEl) {
-          this.equalizerEl.classList.remove('active');
-        }
-      }, 1000);
-    }
+    // Pulse Equalizer
+    this.pulseEqualizer(1200);
 
     // Smooth transition animation
     if (!isFirstLoad) {
@@ -290,10 +458,62 @@ class DialogueEngine {
     `;
   }
 
+  playCurrentVoice() {
+    if (!this.currentDialogueItem) return;
+
+    const item = this.currentDialogueItem;
+    this.isPlayingVoice = true;
+
+    if (this.playVoiceBtn) {
+      this.playVoiceBtn.classList.add('playing');
+      this.playVoiceBtn.innerHTML = '<span>🔊 Playing Voice...</span>';
+    }
+
+    if (this.equalizerEl) {
+      this.equalizerEl.classList.add('active');
+    }
+
+    if (window.showToast) {
+      window.showToast(`🔊 Playing voice: ${item.heroName} (${item.movie})`);
+    }
+
+    if (window.cinemaAudio) {
+      window.cinemaAudio.playActorVoice(
+        item.hero,
+        item.dialogue,
+        item.audioFile,
+        () => {
+          // On speech/audio start
+          if (this.equalizerEl) this.equalizerEl.classList.add('active');
+        },
+        () => {
+          // On speech/audio end
+          this.isPlayingVoice = false;
+          if (this.equalizerEl) this.equalizerEl.classList.remove('active');
+          if (this.playVoiceBtn) {
+            this.playVoiceBtn.classList.remove('playing');
+            this.playVoiceBtn.innerHTML = '<span>🔊 Play Actor Voice</span>';
+          }
+        }
+      );
+    }
+  }
+
+  pulseEqualizer(durationMs = 1000) {
+    if (this.equalizerEl) {
+      this.equalizerEl.classList.add('active');
+      setTimeout(() => {
+        if (!this.isPlayingVoice && this.equalizerEl) {
+          this.equalizerEl.classList.remove('active');
+        }
+      }, durationMs);
+    }
+  }
+
   copyCurrentDialogue() {
     if (!this.currentDialogueItem) return;
 
-    const copyText = `"${this.currentDialogueItem.dialogue}" — ${this.currentDialogueItem.heroName} (${this.currentDialogueItem.context}) #DevForge2026`;
+    const copyText = `"${this.currentDialogueItem.dialogue}" — ${this.currentDialogueItem.heroName} [${this.currentDialogueItem.movie}] #DevForge2026`;
     
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(copyText).then(() => {
