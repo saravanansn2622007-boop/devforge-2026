@@ -74,7 +74,7 @@ class InteractiveActorsEngine {
 
   markButtonAsVoted(btn) {
     btn.classList.add('voted');
-    btn.innerHTML = '<span>✓ Whistled</span>';
+    btn.innerHTML = '<span><i class="fa-solid fa-check"></i> Whistled</span>';
     btn.setAttribute('title', 'Whistle already recorded (1 vote per user)');
   }
 
@@ -106,7 +106,7 @@ class InteractiveActorsEngine {
     if (this.votedActors.includes(actorKey)) {
       if (window.cinemaAudio) window.cinemaAudio.playClick();
       if (window.showToast) {
-        window.showToast(`⚠️ You have already sent a whistle for this Superstar! (Strictly 1 vote per ID)`);
+        window.showToast("You have already sent a whistle for this Superstar! (Strictly 1 vote per ID)");
       }
       btn.classList.add('voted-shake');
       setTimeout(() => btn.classList.remove('voted-shake'), 600);
@@ -122,7 +122,7 @@ class InteractiveActorsEngine {
     let count = parseInt(counterEl.getAttribute('data-count') || '100', 10);
     count += 1;
     counterEl.setAttribute('data-count', count);
-    counterEl.textContent = `${count}K HYPE 🔥`;
+    counterEl.innerHTML = `${count}K HYPE <i class="fa-solid fa-fire text-crimson"></i>`;
 
     // Audio & Toast Fanfare
     if (window.cinemaAudio) {
@@ -131,7 +131,7 @@ class InteractiveActorsEngine {
     
     const actorName = card.querySelector('.actor-name')?.textContent || 'Superstar';
     if (window.showToast) {
-      window.showToast(`🎉 1 Whistle Vote Recorded for ${actorName}!`);
+      window.showToast(`1 Whistle Vote Recorded for ${actorName}!`);
     }
 
     // Spawn celebration particle burst
@@ -139,13 +139,19 @@ class InteractiveActorsEngine {
   }
 
   spawnReactionParticles(card) {
-    const emojis = ['🌟', '🔥', '👑', '⚡', '🤖', '🎉', '👏', '🏆'];
+    const iconClasses = [
+      'fa-solid fa-star text-gold',
+      'fa-solid fa-fire text-crimson',
+      'fa-solid fa-crown text-gold',
+      'fa-solid fa-bolt text-gold',
+      'fa-solid fa-trophy text-gold'
+    ];
     for (let i = 0; i < 4; i++) {
       setTimeout(() => {
-        const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        const iconClass = iconClasses[Math.floor(Math.random() * iconClasses.length)];
         const reaction = document.createElement('div');
         reaction.className = 'floating-reaction';
-        reaction.textContent = emoji;
+        reaction.innerHTML = `<i class="${iconClass}"></i>`;
         reaction.style.left = `${Math.random() * 60 + 20}%`;
         reaction.style.bottom = '80px';
         card.appendChild(reaction);
@@ -162,22 +168,22 @@ class InteractiveActorsEngine {
     if (window.cinemaAudio) {
       if (actorKey === 'rajini') {
         window.cinemaAudio.playSuperstarWhistle();
-        window.showToast("🌟 SUPERSTAR: Sunglasses Flipped! Thalaivar Mass!");
+        window.showToast("SUPERSTAR: Sunglasses Flipped! Thalaivar Mass!");
       } else if (actorKey === 'vijay') {
         window.cinemaAudio.playMassBassDrop();
-        window.showToast("🔥 THALAPATHY: Bloody Sweet Leo Mode Activated!");
+        window.showToast("THALAPATHY: Bloody Sweet Leo Mode Activated!");
       } else if (actorKey === 'chitti') {
         window.cinemaAudio.playChittiLaser();
-        window.showToast("🤖 CHITTI 2.0: Speed 1 THz, Memory 1 ZB! Neural Red Scan!");
+        window.showToast("CHITTI 2.0: Speed 1 THz, Memory 1 ZB! Neural Red Scan!");
       } else if (actorKey === 'kamal') {
         window.cinemaAudio.playMassBassDrop();
-        window.showToast("🦅 ULAGANAYAGAN: LCU Commander Vikram Enters!");
+        window.showToast("ULAGANAYAGAN: LCU Commander Vikram Enters!");
       } else if (actorKey === 'ajith') {
         window.cinemaAudio.playClapperSnap();
-        window.showToast("⚡ THALA AJITH: Mankatha Coin Flipped! No Rules!");
+        window.showToast("THALA AJITH: Mankatha Coin Flipped! No Rules!");
       } else if (actorKey === 'suriya') {
         window.cinemaAudio.playClick();
-        window.showToast("⏳ SURIYA: Chronos 24 Watch Time Freeze Engaged!");
+        window.showToast("SURIYA: Chronos 24 Watch Time Freeze Engaged!");
       }
     }
 

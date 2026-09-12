@@ -8,7 +8,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "👑",
+    icon: "fa-solid fa-crown",
     tag: "Baashha Mass",
     dialogue: "Naan oru thadava sonna... nooru thadava sonna madhiri!",
     movie: "Baashha (1995)",
@@ -18,7 +18,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "🕶️",
+    icon: "fa-solid fa-glasses",
     tag: "Padayappa Swag",
     dialogue: "En vazhi... thani vazhi! Seendadha!",
     movie: "Padayappa (1999)",
@@ -28,7 +28,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "🦁",
+    icon: "fa-solid fa-paw",
     tag: "Jailer Hukum",
     dialogue: "Hukum... Tiger Ka Hukum! Alappara kelapparom!",
     movie: "Jailer (2023)",
@@ -38,7 +38,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "💸",
+    icon: "fa-solid fa-coins",
     tag: "Sivaji The Boss",
     dialogue: "Kanna, panni dhan kootama varum... Singam single-ah dhan varum!",
     movie: "Sivaji The Boss (2007)",
@@ -48,7 +48,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "⚡",
+    icon: "fa-solid fa-bolt",
     tag: "Annamalai Roar",
     dialogue: "Naan solradhaiyum seiven... solladdhaiyum seiven!",
     movie: "Annamalai (1992)",
@@ -58,7 +58,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "🌟",
+    icon: "fa-solid fa-star",
     tag: "Muthu Punch",
     dialogue: "Naan eppo varuven, epdi varuven-nu yarukkum theriyadhu... Aana vara vendiya nerathula correct-ah vandhuduvain!",
     movie: "Muthu (1995)",
@@ -68,7 +68,7 @@ const kollywoodDialogues = [
   {
     hero: "superstar",
     heroName: "Superstar Rajinikanth",
-    avatar: "🔥",
+    icon: "fa-solid fa-fire",
     tag: "Petta Swagger",
     dialogue: "Kaali da... Petta paraak!",
     movie: "Petta (2019)",
@@ -80,7 +80,7 @@ const kollywoodDialogues = [
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "🔥",
+    icon: "fa-solid fa-fire",
     tag: "Thuppakki Style",
     dialogue: "I am waiting!",
     movie: "Thuppakki (2012)",
@@ -90,7 +90,7 @@ const kollywoodDialogues = [
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "⚔️",
+    icon: "fa-solid fa-shield-halved",
     tag: "Leo Bloody Sweet",
     dialogue: "Bloody Sweet!",
     movie: "Leo (2023)",
@@ -100,7 +100,7 @@ const kollywoodDialogues = [
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "🔫",
+    icon: "fa-solid fa-crosshairs",
     tag: "Pokkiri Attitude",
     dialogue: "Oru vaati mudivu pannita... en pecha naane kekka maaten!",
     movie: "Pokkiri (2007)",
@@ -110,7 +110,7 @@ const kollywoodDialogues = [
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "⚡",
+    icon: "fa-solid fa-bolt",
     tag: "Ghilli Mass",
     dialogue: "Indha area, andha area, endha area-layum enakku bayam kidayadhu... All area-layum aiyya Ghilli da!",
     movie: "Ghilli (2004)",
@@ -120,7 +120,7 @@ const kollywoodDialogues = [
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "🎭",
+    icon: "fa-solid fa-masks-theater",
     tag: "Mersal Swagger",
     dialogue: "Neenga aala maathalaam... aana adhe aal thirumba varumpothu, Aandavane vandhaalum thadukka mudiyaadhu!",
     movie: "Mersal (2017)",
@@ -130,7 +130,7 @@ const kollywoodDialogues = [
   {
     hero: "thalapathy",
     heroName: "Thalapathy Vijay",
-    avatar: "🎧",
+    icon: "fa-solid fa-headphones",
     tag: "Master Vibe",
     dialogue: "Vathi coming othukko!",
     movie: "Master (2021)",
@@ -142,7 +142,7 @@ const kollywoodDialogues = [
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
-    avatar: "🎲",
+    icon: "fa-solid fa-dice",
     tag: "Mankatha Gaming",
     dialogue: "En vazhi thani vazhi... Vinayagam game starts now! Money Money Money... No rules!",
     movie: "Mankatha (2011)",
@@ -152,7 +152,7 @@ const kollywoodDialogues = [
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
-    avatar: "🏍️",
+    icon: "fa-solid fa-gauge-high",
     tag: "Billa Swagger",
     dialogue: "I'm back! Enna thedi ethaavathu varalaam... Aana naan thedi pona oruthan kooda escape aaga mudiyaadhu!",
     movie: "Billa (2007)",
@@ -162,7 +162,7 @@ const kollywoodDialogues = [
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
-    avatar: "🏁",
+    icon: "fa-solid fa-flag-checkered",
     tag: "Vedalam Rage",
     dialogue: "Theri panna poren... Theri!",
     movie: "Vedalam (2015)",
@@ -172,7 +172,7 @@ const kollywoodDialogues = [
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
-    avatar: "⚡",
+    icon: "fa-solid fa-bolt",
     tag: "Vivegam Willpower",
     dialogue: "Never, ever, give up!",
     movie: "Vivegam (2017)",
@@ -182,7 +182,7 @@ const kollywoodDialogues = [
   {
     hero: "thala",
     heroName: "Thala Ajith Kumar",
-    avatar: "👑",
+    icon: "fa-solid fa-crown",
     tag: "Varalaru Pride",
     dialogue: "En vaazhkkaiyla ovvoru naalum, ovvoru nimishamum, yen ovvoru nodiyum naana sethukkitadhu da!",
     movie: "Varalaru (2006)",
@@ -194,7 +194,7 @@ const kollywoodDialogues = [
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Vikram)",
-    avatar: "🦅",
+    icon: "fa-solid fa-feather-pointed",
     tag: "LCU Commander",
     dialogue: "Aarambikkalaangala?",
     movie: "Vikram (2022)",
@@ -204,7 +204,7 @@ const kollywoodDialogues = [
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Vikram)",
-    avatar: "🔥",
+    icon: "fa-solid fa-fire",
     tag: "Pathala Pathala",
     dialogue: "Pathala Pathala... Sandhula vandhu kooda sandai poduven!",
     movie: "Vikram (2022)",
@@ -214,7 +214,7 @@ const kollywoodDialogues = [
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Nayakan)",
-    avatar: "🎭",
+    icon: "fa-solid fa-masks-theater",
     tag: "Nayakan Philosophy",
     dialogue: "Naalu perukku nalladhu nadakkum-na... edhuvume thappu illa!",
     movie: "Nayakan (1987)",
@@ -224,7 +224,7 @@ const kollywoodDialogues = [
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Dasavathaaram)",
-    avatar: "🕉️",
+    icon: "fa-solid fa-om",
     tag: "Dasavathaaram Philosophy",
     dialogue: "Kadavul illai-nu sollala... Irundha nalla irukkum-nu dhaan solren!",
     movie: "Dasavathaaram (2008)",
@@ -234,7 +234,7 @@ const kollywoodDialogues = [
   {
     hero: "ulaganayagan",
     heroName: "Kamal Haasan (Thevar Magan)",
-    avatar: "👑",
+    icon: "fa-solid fa-crown",
     tag: "Thevar Magan Legacy",
     dialogue: "Unakku vendiyadhai nee dhaan kettu vaanganum!",
     movie: "Thevar Magan (1992)",
@@ -246,7 +246,7 @@ const kollywoodDialogues = [
   {
     hero: "chitti",
     heroName: "Chitti Robo 2.0",
-    avatar: "🤖",
+    icon: "fa-solid fa-robot",
     tag: "Robo Tech Overclock",
     dialogue: "Hello world! Memory 1 Zettabyte, speed 1 Terahertz! Chitti speed 1 THz!",
     movie: "Enthiran (2010)",
@@ -256,7 +256,7 @@ const kollywoodDialogues = [
   {
     hero: "chitti",
     heroName: "Chitti Robo 2.0",
-    avatar: "🔴",
+    icon: "fa-solid fa-circle-dot",
     tag: "Red Neural Chip",
     dialogue: "Dot... Black sheep!",
     movie: "Enthiran (2010)",
@@ -266,7 +266,7 @@ const kollywoodDialogues = [
   {
     hero: "chitti",
     heroName: "Chitti Robo 2.0",
-    avatar: "⚡",
+    icon: "fa-solid fa-bolt",
     tag: "Version 2.0 Reloaded",
     dialogue: "I am 2.0! Version 2.0 reloaded!",
     movie: "Enthiran 2.0 (2018)",
@@ -276,7 +276,7 @@ const kollywoodDialogues = [
   {
     hero: "chitti",
     heroName: "Chitti Robo 2.0",
-    avatar: "💥",
+    icon: "fa-solid fa-explosion",
     tag: "Enthiran 2.0 Punch",
     dialogue: "Kanna, 2.0 vandhuttaan... Game over!",
     movie: "Enthiran 2.0 (2018)",
@@ -288,7 +288,7 @@ const kollywoodDialogues = [
   {
     hero: "suriya",
     heroName: "Suriya (Rolex)",
-    avatar: "🦂",
+    icon: "fa-solid fa-skull",
     tag: "Rolex Sir",
     dialogue: "Sir... Just call me Rolex!",
     movie: "Vikram (2022)",
@@ -298,7 +298,7 @@ const kollywoodDialogues = [
   {
     hero: "suriya",
     heroName: "Suriya (Singam)",
-    avatar: "🦁",
+    icon: "fa-solid fa-paw",
     tag: "Durai Singam",
     dialogue: "Ongi adicha ondra ton weightu da... Paakkuriya! Singam da!",
     movie: "Singam (2010)",
@@ -308,7 +308,7 @@ const kollywoodDialogues = [
   {
     hero: "suriya",
     heroName: "Suriya (Chronos 24)",
-    avatar: "⏳",
+    icon: "fa-solid fa-hourglass-half",
     tag: "Time Freeze Watch",
     dialogue: "Time-ah control panna mudiyum-na... Ulagathaye control pannalaam!",
     movie: "24 The Movie (2016)",
@@ -318,7 +318,7 @@ const kollywoodDialogues = [
   {
     hero: "suriya",
     heroName: "Suriya (Ayan)",
-    avatar: "💎",
+    icon: "fa-solid fa-gem",
     tag: "Ayan Deva",
     dialogue: "Namma ethula step eduthu vechaalum... adhula top-la irukkanum!",
     movie: "Ayan (2009)",
@@ -328,7 +328,7 @@ const kollywoodDialogues = [
   {
     hero: "suriya",
     heroName: "Suriya (Ghajini)",
-    avatar: "🧠",
+    icon: "fa-solid fa-brain",
     tag: "Ghajini Legend",
     dialogue: "Sanjay Ramaswamy... Remember the name!",
     movie: "Ghajini (2005)",
@@ -349,7 +349,6 @@ class DialogueEngine {
     this.dialogueAuthor = document.getElementById('dialogue-speaker');
     this.heroChips = document.querySelectorAll('.hero-chip');
     this.generateBtn = document.getElementById('generate-dialogue-btn');
-    this.playVoiceBtn = document.getElementById('play-voice-btn');
     this.copyBtn = document.getElementById('copy-dialogue-btn');
     this.takeNumEl = document.getElementById('dialogue-take-num');
     this.emblemEl = document.getElementById('hero-dynamic-emblem');
@@ -381,13 +380,6 @@ class DialogueEngine {
         if (this.takeNumEl) this.takeNumEl.textContent = this.takeNumber;
         this.getRandomDialogue();
         if (window.cinemaAudio) window.cinemaAudio.playMassBassDrop();
-      });
-    }
-
-    // Play Actor Voice button
-    if (this.playVoiceBtn) {
-      this.playVoiceBtn.addEventListener('click', () => {
-        this.playCurrentVoice();
       });
     }
 
@@ -424,7 +416,7 @@ class DialogueEngine {
       this.card.setAttribute('data-hero-theme', item.hero);
     }
     if (this.emblemEl) {
-      this.emblemEl.textContent = item.avatar;
+      this.emblemEl.innerHTML = `<i class="${item.icon || 'fa-solid fa-crown'} text-gold"></i>`;
     }
 
     // Pulse Equalizer
@@ -452,52 +444,13 @@ class DialogueEngine {
   renderDialogueContent(item) {
     this.dialogueText.textContent = item.dialogue;
     this.dialogueAuthor.innerHTML = `
-      <span class="author-name">${item.avatar} ${item.heroName}</span> • 
+      <span class="author-name"><i class="${item.icon || 'fa-solid fa-crown'} text-gold" style="margin-right: 6px;"></i>${item.heroName}</span> • 
       <span class="author-movie">${item.movie || item.context}</span> • 
       <span class="author-context">${item.context}</span>
     `;
   }
 
-  playCurrentVoice() {
-    if (!this.currentDialogueItem) return;
 
-    const item = this.currentDialogueItem;
-    this.isPlayingVoice = true;
-
-    if (this.playVoiceBtn) {
-      this.playVoiceBtn.classList.add('playing');
-      this.playVoiceBtn.innerHTML = '<span>🔊 Playing Voice...</span>';
-    }
-
-    if (this.equalizerEl) {
-      this.equalizerEl.classList.add('active');
-    }
-
-    if (window.showToast) {
-      window.showToast(`🔊 Playing voice: ${item.heroName} (${item.movie})`);
-    }
-
-    if (window.cinemaAudio) {
-      window.cinemaAudio.playActorVoice(
-        item.hero,
-        item.dialogue,
-        item.audioFile,
-        () => {
-          // On speech/audio start
-          if (this.equalizerEl) this.equalizerEl.classList.add('active');
-        },
-        () => {
-          // On speech/audio end
-          this.isPlayingVoice = false;
-          if (this.equalizerEl) this.equalizerEl.classList.remove('active');
-          if (this.playVoiceBtn) {
-            this.playVoiceBtn.classList.remove('playing');
-            this.playVoiceBtn.innerHTML = '<span>🔊 Play Actor Voice</span>';
-          }
-        }
-      );
-    }
-  }
 
   pulseEqualizer(durationMs = 1000) {
     if (this.equalizerEl) {
@@ -518,7 +471,7 @@ class DialogueEngine {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(copyText).then(() => {
         if (window.showToast) {
-          window.showToast("📋 Punchline copied to clipboard! Share the mass!");
+          window.showToast("Punchline copied to clipboard! Share the inspiration!");
         }
         if (window.cinemaAudio) window.cinemaAudio.playClick();
       }).catch(() => {
@@ -537,7 +490,7 @@ class DialogueEngine {
     document.execCommand('copy');
     document.body.removeChild(textarea);
     if (window.showToast) {
-      window.showToast("📋 Punchline copied to clipboard!");
+      window.showToast("Punchline copied to clipboard!");
     }
   }
 }

@@ -14,12 +14,12 @@ window.showToast = function(message, duration = 3500) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<span>🎬</span> <div>${message}</div>`;
+  toast.innerHTML = `<i class="fa-solid fa-bolt toast-icon text-gold"></i> <div>${message}</div>`;
   container.appendChild(toast);
 
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateX(40px)';
+    toast.style.transform = 'translateY(20px)';
     toast.style.transition = 'all 0.3s ease';
     setTimeout(() => toast.remove(), 300);
   }, duration);
@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Audio Control & Equalizer
   const soundToggleBtn = document.getElementById('sound-toggle-btn');
   const equalizer = document.getElementById('sound-eq');
-  let audioEnabled = true;
 
   if (soundToggleBtn) {
     soundToggleBtn.addEventListener('click', () => {
@@ -47,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const isMuted = window.cinemaAudio.toggleMute();
         if (isMuted) {
           equalizer.classList.add('paused');
-          soundToggleBtn.innerHTML = '🔇';
+          soundToggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
           window.showToast("Audio Muted");
         } else {
           equalizer.classList.remove('paused');
-          soundToggleBtn.innerHTML = '🔊';
+          soundToggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
           window.cinemaAudio.playClick();
-          window.showToast("🎬 Cinema Audio FX Activated!");
+          window.showToast("Cinema Audio FX Activated!");
         }
       }
     });
@@ -86,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clapperCard.classList.add('clapper-snapping');
       }
 
-      window.showToast(`🎬 Scene Atmosphere Changed: ${chip.textContent.trim()}`);
+      window.showToast(`Scene Atmosphere Changed: ${chip.textContent.trim()}`);
     });
   });
 
@@ -101,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       heroClapperCard.classList.remove('clapper-snapping');
       void heroClapperCard.offsetWidth;
       heroClapperCard.classList.add('clapper-snapping');
-      window.showToast("🎬 ACTION! Take 2026: Code Rolling!");
+      window.showToast("ACTION! Take 2026: Code Rolling!");
     });
   }
 
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(flash);
       setTimeout(() => flash.remove(), 900);
 
-      window.showToast("🌟 MASS ENTRY! Welcome to DevForge 2026!");
+      window.showToast("Keynote Prelude Activated! Welcome to DevForge 2026!");
     });
   }
 
@@ -226,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = navMenu.classList.toggle('mobile-open');
-      mobileToggle.textContent = isOpen ? '✕' : '☰';
+      mobileToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
       mobileToggle.setAttribute('aria-expanded', isOpen);
       if (window.cinemaAudio) window.cinemaAudio.playClick();
     });
@@ -236,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('mobile-open');
-        mobileToggle.textContent = '☰';
+        mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         mobileToggle.setAttribute('aria-expanded', 'false');
       });
     });
@@ -245,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
       if (navMenu.classList.contains('mobile-open') && !navMenu.contains(e.target) && e.target !== mobileToggle) {
         navMenu.classList.remove('mobile-open');
-        mobileToggle.textContent = '☰';
+        mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         mobileToggle.setAttribute('aria-expanded', 'false');
       }
     });

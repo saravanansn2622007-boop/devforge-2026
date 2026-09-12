@@ -155,7 +155,7 @@ class RegistrationEngine {
 
     tableBody.innerHTML = allCrews.map(crew => `
       <tr>
-        <td style="font-weight: 700; color: #fff;">🎬 ${crew.teamName}</td>
+        <td style="font-weight: 700; color: #fff;"><i class="fa-solid fa-users" style="color: var(--accent-gold); margin-right: 8px;"></i>${crew.teamName}</td>
         <td><span style="color: var(--accent-gold);">${crew.trackName}</span></td>
         <td>${crew.leadName}</td>
         <td style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">${crew.id}</td>
@@ -250,12 +250,12 @@ class RegistrationEngine {
       const team = document.getElementById('reg-team-name');
       const track = document.getElementById('reg-track');
       if (!team || !team.value.trim()) {
-        window.showToast("⚠️ Please enter your Movie / Team Banner Name!");
+        window.showToast("Please enter your Team Name!");
         if (team) team.focus();
         return false;
       }
       if (!track || !track.value) {
-        window.showToast("⚠️ Please choose your Hackathon Theme Track!");
+        window.showToast("Please choose your Hackathon Theme Track!");
         if (track) track.focus();
         return false;
       }
@@ -268,27 +268,27 @@ class RegistrationEngine {
       const leadSec = document.getElementById('reg-lead-sec');
 
       if (!leadName?.value.trim()) {
-        window.showToast("⚠️ Team Lead name is required!");
+        window.showToast("Team Lead name is required!");
         leadName?.focus();
         return false;
       }
       if (!leadRoll?.value.trim()) {
-        window.showToast("⚠️ Team Lead roll number is required!");
+        window.showToast("Team Lead roll number is required!");
         leadRoll?.focus();
         return false;
       }
       if (!leadEmail?.value.trim() || !leadEmail.value.includes('@')) {
-        window.showToast("⚠️ Please enter a valid Team Lead email address!");
+        window.showToast("Please enter a valid Team Lead email address!");
         leadEmail?.focus();
         return false;
       }
       if (!leadDept?.value.trim()) {
-        window.showToast("⚠️ Team Lead department is required!");
+        window.showToast("Team Lead department is required!");
         leadDept?.focus();
         return false;
       }
       if (!leadSec?.value.trim()) {
-        window.showToast("⚠️ Team Lead section is required!");
+        window.showToast("Team Lead section is required!");
         leadSec?.focus();
         return false;
       }
@@ -301,7 +301,7 @@ class RegistrationEngine {
       const m1Sec = document.getElementById('reg-m1-sec');
 
       if (!m1Name?.value.trim() || !m1Roll?.value.trim() || !m1Email?.value.trim() || !m1Dept?.value.trim() || !m1Sec?.value.trim()) {
-        window.showToast("⚠️ Please fill all required fields for Team Member 1!");
+        window.showToast("Please fill all required fields for Team Member 1!");
         if (!m1Name?.value.trim()) m1Name?.focus();
         return false;
       }
@@ -314,7 +314,7 @@ class RegistrationEngine {
       const m2Sec = document.getElementById('reg-m2-sec');
 
       if (!m2Name?.value.trim() || !m2Roll?.value.trim() || !m2Email?.value.trim() || !m2Dept?.value.trim() || !m2Sec?.value.trim()) {
-        window.showToast("⚠️ Please fill all required fields for Team Member 2!");
+        window.showToast("Please fill all required fields for Team Member 2!");
         if (!m2Name?.value.trim()) m2Name?.focus();
         return false;
       }
@@ -327,7 +327,7 @@ class RegistrationEngine {
       const m3Sec = document.getElementById('reg-m3-sec');
 
       if (!m3Name?.value.trim() || !m3Roll?.value.trim() || !m3Email?.value.trim() || !m3Dept?.value.trim() || !m3Sec?.value.trim()) {
-        window.showToast("⚠️ Please fill all required fields for Team Member 3!");
+        window.showToast("Please fill all required fields for Team Member 3!");
         if (!m3Name?.value.trim()) m3Name?.focus();
         return false;
       }
@@ -393,11 +393,11 @@ class RegistrationEngine {
     document.body.appendChild(flash);
     setTimeout(() => flash.remove(), 900);
 
-    window.showToast("🌟 BLOCKBUSTER! Your Crew is Registered for DevForge '26!");
+    window.showToast("Your Team is Registered for DevForge '26!");
   }
 
   downloadTicket() {
-    window.showToast("🎟️ Preparing your FDFS VIP Pass for Download / Print...");
+    window.showToast("Preparing your Digital VIP Pass for Download / Print...");
     setTimeout(() => {
       window.print();
     }, 500);

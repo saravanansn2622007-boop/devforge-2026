@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Outfit:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
@@ -31,7 +34,7 @@
     <header class="navbar">
       <div class="container nav-wrapper">
         <a href="#hero" class="brand-logo">
-          <div class="brand-icon">⚡</div>
+          <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
           <div class="brand-title">
             DEVFORGE
             <span class="brand-sub">NATIONAL CINETECH '26</span>
@@ -50,7 +53,7 @@
         <div class="nav-controls">
           <!-- Audio Equalizer Visualizer & Mute Toggle -->
           <button id="sound-toggle-btn" class="icon-btn" title="Toggle Cinema Sound FX" aria-label="Toggle Sound">
-            🔊
+            <i class="fa-solid fa-volume-high"></i>
           </button>
           <div id="sound-eq" class="sound-equalizer" title="Web Audio Synthesizer Active">
             <div class="eq-bar"></div>
@@ -60,8 +63,8 @@
             <div class="eq-bar"></div>
           </div>
 
-          <a href="#register" class="btn btn-primary btn-sm">🚀 Register Team</a>
-          <button class="icon-btn mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+          <a href="#register" class="btn btn-primary btn-sm nav-reg-btn"><i class="fa-solid fa-rocket"></i> <span>Register Team</span></a>
+          <button class="icon-btn mobile-toggle" aria-label="Toggle Navigation Menu"><i class="fa-solid fa-bars"></i></button>
         </div>
       </div>
     </header>
@@ -74,18 +77,18 @@
 
           <!-- Theme / Atmosphere Controller -->
           <div class="clapper-theme-bar">
-            <span class="clapper-label">⚡ ATMOSPHERE:</span>
-            <button class="theme-chip active" data-theme-val="default">🌟 Executive Gold</button>
-            <button class="theme-chip" data-theme-val="lcu">🔥 Cyber Crimson</button>
-            <button class="theme-chip" data-theme-val="chitti">🤖 Quantum Cyan</button>
-            <button class="theme-chip" data-theme-val="vintage">🎞️ Minimalist Slate</button>
+            <span class="clapper-label"><i class="fa-solid fa-bolt text-gold"></i> ATMOSPHERE:</span>
+            <button class="theme-chip active" data-theme-val="default"><i class="fa-solid fa-star text-gold"></i> Executive Gold</button>
+            <button class="theme-chip" data-theme-val="lcu"><i class="fa-solid fa-fire text-crimson"></i> Cyber Crimson</button>
+            <button class="theme-chip" data-theme-val="chitti"><i class="fa-solid fa-robot text-cyan"></i> Quantum Cyan</button>
+            <button class="theme-chip" data-theme-val="vintage"><i class="fa-solid fa-film text-gold"></i> Minimalist Slate</button>
           </div>
 
           <div class="hero-grid">
             <!-- Left Hero Content -->
             <div class="hero-content">
               <div class="hero-tag">
-                <span>⚡ DEVFORGE 2026 • PREMIER 24-HOUR CINETECH HACKATHON</span>
+                <span><i class="fa-solid fa-bolt text-gold"></i> DEVFORGE 2026 • PREMIER 24-HOUR CINETECH HACKATHON</span>
               </div>
 
               <h1 class="hero-title">
@@ -99,10 +102,10 @@
 
               <div class="hero-cta-group">
                 <a href="#register" class="btn btn-primary btn-lg">
-                  🚀 Register Your Team (4 Members)
+                  <i class="fa-solid fa-rocket"></i> Register Your Team (4 Members)
                 </a>
                 <button id="superstar-intro-btn" class="btn btn-secondary btn-lg">
-                  🌟 Experience Keynote Prelude
+                  <i class="fa-solid fa-star text-gold"></i> Experience Keynote Prelude
                 </button>
               </div>
 
@@ -148,7 +151,7 @@
 
               <!-- 24-Hour Live Countdown -->
               <div class="clapper-countdown">
-                <div class="countdown-title">⏳ HACKATHON COMMENCES IN</div>
+                <div class="countdown-title"><i class="fa-solid fa-hourglass-half text-gold"></i> HACKATHON COMMENCES IN</div>
                 <div class="countdown-timer">
                   <div class="timer-unit">
                     <div id="cd-days" class="timer-val">02</div>
@@ -170,7 +173,7 @@
               </div>
 
               <button class="btn btn-crimson clapper-action-btn">
-                🎬 INITIATE AUDIO SPRINT PRELUDE
+                <i class="fa-solid fa-clapperboard"></i> INITIATE AUDIO SPRINT PRELUDE
               </button>
             </div>
           </div>
@@ -192,7 +195,7 @@
             <!-- Track 1: Cybersecurity + Fullstack -->
             <div class="track-card">
               <div class="track-badge">CYBERSECURITY + FULLSTACK</div>
-              <div class="track-icon">🛡️</div>
+              <div class="track-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <h3 class="track-title">Cybersecurity & Hardened Fullstack</h3>
               <p class="track-desc">
                 Architect resilient end-to-end fullstack platforms, zero-trust authentication protocols, automated threat detection pipelines, and high-performance web applications with enterprise defense-in-depth.
@@ -209,7 +212,7 @@
             <!-- Track 2: Mobile App -->
             <div class="track-card">
               <div class="track-badge">MOBILE SYSTEMS</div>
-              <div class="track-icon">📱</div>
+              <div class="track-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
               <h3 class="track-title">High-Performance Mobile Systems</h3>
               <p class="track-desc">
                 Develop fluid, production-ready mobile applications for iOS & Android with offline-first synchronization, edge compute integration, micro-animations, and real-time streaming architectures.
@@ -226,7 +229,7 @@
             <!-- Track 3: Enterprise App -->
             <div class="track-card">
               <div class="track-badge">ENTERPRISE SYSTEMS</div>
-              <div class="track-icon">🏢</div>
+              <div class="track-icon"><i class="fa-solid fa-server"></i></div>
               <h3 class="track-title">Distributed Enterprise Architecture</h3>
               <p class="track-desc">
                 Engineer scalable distributed backends, asynchronous event-driven message streaming, microservice orchestration, automated enterprise workflows, and robust cloud databases designed for massive scale.
@@ -243,7 +246,7 @@
             <!-- Track 4: AI / ML -->
             <div class="track-card">
               <div class="track-badge">APPLIED AI / ML</div>
-              <div class="track-icon">🤖</div>
+              <div class="track-icon"><i class="fa-solid fa-brain"></i></div>
               <h3 class="track-title">Applied AI & Machine Learning</h3>
               <p class="track-desc">
                 Deploy state-of-the-art foundation models, autonomous agents, neural computer vision pipelines, real-time natural language processing, and predictive analytics that solve high-impact industry challenges.
@@ -277,7 +280,7 @@
               <div class="timeline-dot"></div>
               <div class="timeline-content">
                 <div class="timeline-scene-tag">PHASE 01: INCEPTION & TECHNICAL BRIEFING</div>
-                <div class="timeline-time">📅 Sep 22, 2026 • 09:00 AM - 11:00 AM</div>
+                <div class="timeline-time"><i class="fa-regular fa-calendar-days"></i> Sep 22, 2026 • 09:00 AM - 11:00 AM</div>
                 <h3 class="timeline-title">Opening Keynote & Problem Statement Release</h3>
                 <p class="timeline-desc">
                   Official welcome ceremony, release of granular problem statements, team onboarding, and distribution of sponsor cloud compute tokens & API credentials.
@@ -290,7 +293,7 @@
               <div class="timeline-dot"></div>
               <div class="timeline-content">
                 <div class="timeline-scene-tag">PHASE 02: ARCHITECTURAL CHECKPOINT & MENTORSHIP</div>
-                <div class="timeline-time">📅 Sep 22, 2026 • 04:00 PM - 07:00 PM</div>
+                <div class="timeline-time"><i class="fa-regular fa-calendar-days"></i> Sep 22, 2026 • 04:00 PM - 07:00 PM</div>
                 <h3 class="timeline-title">System Architecture Audit & Expert Mentoring</h3>
                 <p class="timeline-desc">
                   1-on-1 technical design audits with industry architects, code review checkpoints, and strategic refinement for scalable solution delivery.
@@ -303,7 +306,7 @@
               <div class="timeline-dot"></div>
               <div class="timeline-content">
                 <div class="timeline-scene-tag">PHASE 03: OVERNIGHT DEEP-TECH SPRINT</div>
-                <div class="timeline-time">📅 Sep 22-23 • 11:30 PM - 04:00 AM • Overnight</div>
+                <div class="timeline-time"><i class="fa-regular fa-calendar-days"></i> Sep 22-23 • 11:30 PM - 04:00 AM • Overnight</div>
                 <h3 class="timeline-title">Midnight Coding Sprint & Feature Integration</h3>
                 <p class="timeline-desc">
                   High-tempo development sprint, integration of core features, performance profiling, and nocturnal technical acceleration with continuous refreshments.
@@ -316,7 +319,7 @@
               <div class="timeline-dot"></div>
               <div class="timeline-content">
                 <div class="timeline-scene-tag">PHASE 04: CODE FREEZE & GRAND AWARDS</div>
-                <div class="timeline-time">📅 Sep 23, 2026 • 07:00 AM - 09:30 AM</div>
+                <div class="timeline-time"><i class="fa-regular fa-calendar-days"></i> Sep 23, 2026 • 07:00 AM - 09:30 AM</div>
                 <h3 class="timeline-title">Git Code Freeze, Live Jury Demos & Awards</h3>
                 <p class="timeline-desc">
                   Final repository commits, live interactive product demonstrations before an executive jury panel, announcement of winners, and trophy felicitation.
@@ -337,7 +340,7 @@
             <div class="cinema-clapper-bar">
               <div class="clapper-stripes"></div>
               <div class="clapper-meta">
-                <span class="clapper-badge">⚡ PRODUCTION: DEVFORGE '26</span>
+                <span class="clapper-badge"><i class="fa-solid fa-bolt text-gold"></i> PRODUCTION: DEVFORGE '26</span>
                 <span class="clapper-badge">ARENA: CINEMA LEADERSHIP</span>
                 <span class="clapper-badge clapper-take">TAKE: #<span id="dialogue-take-num">1</span></span>
               </div>
@@ -351,31 +354,31 @@
 
             <div class="hero-avatar-picker">
               <button class="hero-chip active" data-hero="all">
-                <span class="chip-icon">🌟</span>
+                <span class="chip-icon"><i class="fa-solid fa-icons"></i></span>
                 <span>All Icons</span>
               </button>
               <button class="hero-chip" data-hero="superstar">
-                <span class="chip-icon">👑</span>
+                <span class="chip-icon"><i class="fa-solid fa-crown text-gold"></i></span>
                 <span>Superstar Rajini</span>
               </button>
               <button class="hero-chip" data-hero="thalapathy">
-                <span class="chip-icon">🔥</span>
+                <span class="chip-icon"><i class="fa-solid fa-fire text-crimson"></i></span>
                 <span>Thalapathy Vijay</span>
               </button>
               <button class="hero-chip" data-hero="thala">
-                <span class="chip-icon">⚡</span>
+                <span class="chip-icon"><i class="fa-solid fa-bolt text-gold"></i></span>
                 <span>Thala Ajith</span>
               </button>
               <button class="hero-chip" data-hero="ulaganayagan">
-                <span class="chip-icon">🦅</span>
+                <span class="chip-icon"><i class="fa-solid fa-feather-pointed"></i></span>
                 <span>Kamal Haasan</span>
               </button>
               <button class="hero-chip" data-hero="chitti">
-                <span class="chip-icon">🤖</span>
+                <span class="chip-icon"><i class="fa-solid fa-robot text-cyan"></i></span>
                 <span>Chitti 2.0</span>
               </button>
               <button class="hero-chip" data-hero="suriya">
-                <span class="chip-icon">⏳</span>
+                <span class="chip-icon"><i class="fa-solid fa-hourglass-half"></i></span>
                 <span>Suriya (Rolex / 24)</span>
               </button>
             </div>
@@ -386,7 +389,7 @@
               
               <div class="dialogue-hero-spotlight" id="dialogue-hero-avatar">
                 <div class="spotlight-avatar-ring">
-                  <span id="hero-dynamic-emblem" class="hero-dynamic-emblem">👑</span>
+                  <span id="hero-dynamic-emblem" class="hero-dynamic-emblem"><i class="fa-solid fa-crown text-gold"></i></span>
                 </div>
               </div>
 
@@ -404,7 +407,7 @@
                   <span class="quote-mark close-quote">”</span>
                 </div>
                 <div id="dialogue-speaker" class="dialogue-author">
-                  <span class="author-name">Superstar Rajinikanth</span> • <span class="author-movie">Baashha (1995)</span> • <span class="author-context">Iconic Mass Statement</span>
+                  <span class="author-name"><i class="fa-solid fa-crown text-gold"></i> Superstar Rajinikanth</span> • <span class="author-movie">Baashha (1995)</span> • <span class="author-context">Iconic Mass Statement</span>
                 </div>
               </div>
             </div>
@@ -412,13 +415,10 @@
             <!-- Dialogue Interaction Controls -->
             <div class="dialogue-action-controls">
               <button id="generate-dialogue-btn" class="btn btn-primary pulse-btn">
-                <span>⚡ Generate Next Punchline</span>
-              </button>
-              <button id="play-voice-btn" class="btn btn-secondary dialogue-voice-btn" title="Play Superstar original voice audio">
-                <span>🔊 Play Voice Dialogue</span>
+                <span><i class="fa-solid fa-bolt"></i> Generate Next Punchline</span>
               </button>
               <button id="copy-dialogue-btn" class="btn btn-secondary dialogue-copy-btn" title="Copy dialogue to clipboard">
-                <span>📋 Copy Punchline</span>
+                <span><i class="fa-regular fa-copy"></i> Copy Punchline</span>
               </button>
             </div>
           </div>
@@ -439,34 +439,34 @@
           <div class="prizes-spotlight-wrapper">
             <div class="prize-card grand-spotlight-card">
               <div class="track-badge" style="top: 20px; right: 20px;">GRAND CHAMPIONSHIP</div>
-              <div class="prize-trophy">🏆</div>
+              <div class="prize-trophy"><i class="fa-solid fa-trophy"></i></div>
               <h3 class="prize-title text-gold">Total Prize Pool</h3>
               <div class="prize-amount grand-amount">₹8,000</div>
               
               <div class="prize-spotlight-perks-grid">
                 <div class="spotlight-perk-item">
-                  <div class="perk-icon">💰</div>
+                  <div class="perk-icon"><i class="fa-solid fa-sack-dollar"></i></div>
                   <div class="perk-text">
                     <strong>₹8,000 Direct Cash Rewards</strong>
                     <span>Awarded to standout championship and track-winning teams</span>
                   </div>
                 </div>
                 <div class="spotlight-perk-item">
-                  <div class="perk-icon">🥇</div>
+                  <div class="perk-icon"><i class="fa-solid fa-medal"></i></div>
                   <div class="perk-text">
                     <strong>DevForge Championship Trophies</strong>
                     <span>Prestigious gold-plated physical trophies & winner medals</span>
                   </div>
                 </div>
                 <div class="spotlight-perk-item">
-                  <div class="perk-icon">📜</div>
+                  <div class="perk-icon"><i class="fa-solid fa-certificate"></i></div>
                   <div class="perk-text">
                     <strong>Verified Certificates of Excellence</strong>
                     <span>Industry-recognized credential certificates for all finalists</span>
                   </div>
                 </div>
                 <div class="spotlight-perk-item">
-                  <div class="perk-icon">🚀</div>
+                  <div class="perk-icon"><i class="fa-solid fa-rocket"></i></div>
                   <div class="perk-text">
                     <strong>Incubation & Mentorship Access</strong>
                     <span>Direct fast-track pitching to startup incubators and tech mentors</span>
@@ -502,7 +502,7 @@
               <form id="crew-reg-form">
                 <!-- Step 1: Team & Track Selection -->
                 <div class="form-step active" data-step="1">
-                  <h3 style="margin-bottom: 20px; font-size: 1.25rem;">⚡ Phase 1: Team Name & Challenge Track</h3>
+                  <h3 style="margin-bottom: 20px; font-size: 1.25rem;"><i class="fa-solid fa-bolt text-gold" style="margin-right: 8px;"></i> Phase 1: Team Name & Challenge Track</h3>
                   
                   <div class="form-group">
                     <label class="form-label" for="reg-team-name">Team Name <span class="req">*</span></label>
@@ -512,22 +512,22 @@
                   <div class="form-group">
                     <label class="form-label" for="reg-track">Select Challenge Track <span class="req">*</span></label>
                     <select id="reg-track" class="form-select" required>
-                      <option value="cyber-fullstack">🛡️ Cybersecurity + Fullstack</option>
-                      <option value="mobile-app">📱 High-Performance Mobile Systems</option>
-                      <option value="enterprise-app">🏢 Distributed Enterprise Architecture</option>
-                      <option value="ai-ml">🤖 Applied AI & Machine Learning</option>
+                      <option value="cyber-fullstack">Cybersecurity + Fullstack</option>
+                      <option value="mobile-app">High-Performance Mobile Systems</option>
+                      <option value="enterprise-app">Distributed Enterprise Architecture</option>
+                      <option value="ai-ml">Applied AI & Machine Learning</option>
                     </select>
                   </div>
                 </div>
 
                 <!-- Step 2: Squad Members (1 Team Lead + 3 Members) -->
                 <div class="form-step" data-step="2">
-                  <h3 style="margin-bottom: 24px; font-size: 1.25rem;">👥 Phase 2: Squad Details (1 Team Lead + 3 Members)</h3>
+                  <h3 style="margin-bottom: 24px; font-size: 1.25rem;"><i class="fa-solid fa-users text-gold" style="margin-right: 8px;"></i> Phase 2: Squad Details (1 Team Lead + 3 Members)</h3>
 
                   <!-- 1. Team Lead -->
                   <div class="member-fieldset-card">
                     <div class="member-fieldset-header">
-                      <span class="member-badge lead-badge">👑 Team Lead (Primary Contact)</span>
+                      <span class="member-badge lead-badge"><i class="fa-solid fa-crown" style="margin-right: 4px;"></i> Team Lead (Primary Contact)</span>
                     </div>
                     <div class="form-grid-2">
                       <div class="form-group">
@@ -568,7 +568,7 @@
                   <!-- 2. Team Member 1 -->
                   <div class="member-fieldset-card">
                     <div class="member-fieldset-header">
-                      <span class="member-badge">⭐ Team Member 1 (Engineer 2)</span>
+                      <span class="member-badge"><i class="fa-solid fa-user-gear" style="margin-right: 4px;"></i> Team Member 1 (Engineer 2)</span>
                     </div>
                     <div class="form-grid-2">
                       <div class="form-group">
@@ -609,7 +609,7 @@
                   <!-- 3. Team Member 2 -->
                   <div class="member-fieldset-card">
                     <div class="member-fieldset-header">
-                      <span class="member-badge">⭐ Team Member 2 (Engineer 3)</span>
+                      <span class="member-badge"><i class="fa-solid fa-user-gear" style="margin-right: 4px;"></i> Team Member 2 (Engineer 3)</span>
                     </div>
                     <div class="form-grid-2">
                       <div class="form-group">
@@ -650,7 +650,7 @@
                   <!-- 4. Team Member 3 -->
                   <div class="member-fieldset-card">
                     <div class="member-fieldset-header">
-                      <span class="member-badge">⭐ Team Member 3 (Engineer 4)</span>
+                      <span class="member-badge"><i class="fa-solid fa-user-gear" style="margin-right: 4px;"></i> Team Member 3 (Engineer 4)</span>
                     </div>
                     <div class="form-grid-2">
                       <div class="form-group">
@@ -691,7 +691,7 @@
 
                 <!-- Step 3: Project Synopsis & Architecture Proposal -->
                 <div class="form-step" data-step="3">
-                  <h3 style="margin-bottom: 20px; font-size: 1.25rem;">📜 Phase 3: Project Title & Technical Abstract</h3>
+                  <h3 style="margin-bottom: 20px; font-size: 1.25rem;"><i class="fa-solid fa-file-lines text-gold" style="margin-right: 8px;"></i> Phase 3: Project Title & Technical Abstract</h3>
 
                   <div class="form-group">
                     <label class="form-label" for="reg-pitch-title">Project Title / Proposal Name</label>
@@ -707,13 +707,13 @@
                 <!-- Form Wizard Navigation Controls -->
                 <div class="form-nav-buttons">
                   <button type="button" id="btn-prev-step" class="btn btn-secondary" style="display: none;">
-                    ⬅️ Previous Phase
+                    <i class="fa-solid fa-arrow-left"></i> Previous Phase
                   </button>
                   <button type="button" id="btn-next-step" class="btn btn-primary" style="margin-left: auto;">
-                    Next Phase ➡️
+                    Next Phase <i class="fa-solid fa-arrow-right"></i>
                   </button>
                   <button type="submit" id="btn-submit-reg" class="btn btn-crimson" style="display: none; margin-left: auto;">
-                    🚀 Submit Team Registration & Generate Pass
+                    <i class="fa-solid fa-rocket"></i> Submit Team Registration & Generate Pass
                   </button>
                 </div>
               </form>
@@ -721,7 +721,7 @@
 
             <div style="margin-top: 20px; text-align: center;">
               <button id="view-crews-btn" class="btn btn-secondary btn-sm">
-                👥 View Registered Teams Roster
+                <i class="fa-solid fa-users"></i> View Registered Teams Roster
               </button>
             </div>
           </div>
@@ -743,7 +743,7 @@
             <div class="faq-item active">
               <button class="faq-question">
                 <span>Who is eligible to participate in DevForge 2026?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
               </button>
               <div class="faq-answer" style="max-height: 200px;">
                 Undergraduate and postgraduate engineering students, developers, and tech enthusiasts passionate about Cybersecurity, Fullstack Web, Mobile App Development, Enterprise Systems, or AI/ML are eligible. Teams must comprise exactly 4 members (1 Team Lead + 3 Members).
@@ -753,7 +753,7 @@
             <div class="faq-item">
               <button class="faq-question">
                 <span>Is prior filmmaking or cinema industry knowledge mandatory?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
               </button>
               <div class="faq-answer">
                 No. While the hackathon embraces high-energy storytelling and cinema-inspired themes, all technical evaluations focus strictly on engineering excellence, software design, algorithmic complexity, security robustness, and project impact.
@@ -763,7 +763,7 @@
             <div class="faq-item">
               <button class="faq-question">
                 <span>What are the team size and composition guidelines?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
               </button>
               <div class="faq-answer">
                 Each participating squad must register with exactly <strong>1 Team Lead and 3 Team Members</strong> (4 members total per team) to ensure fair competition and collaborative sprint execution.
@@ -773,7 +773,7 @@
             <div class="faq-item">
               <button class="faq-question">
                 <span>Are cloud infrastructure, APIs, and mentorship provided on-site?</span>
-                <span class="faq-icon">+</span>
+                <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
               </button>
               <div class="faq-answer">
                 Yes. All verified teams receive sponsor cloud compute credits, LLM API tokens, developer tool licenses, and direct access to industry mentors and technical architects during the 24-hour sprint.
@@ -786,10 +786,10 @@
       <!-- Organizer / Registered Crews Modal -->
       <div id="crew-modal-overlay" class="modal-overlay">
         <div class="modal-card">
-          <button id="close-crew-modal" class="modal-close-btn" aria-label="Close modal">✕</button>
+          <button id="close-crew-modal" class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
           <div class="section-tag">ORGANIZER DESK</div>
           <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 8px;">
-            ⚡ REGISTERED <span class="text-gold">DEVFORGE TEAMS</span>
+            <i class="fa-solid fa-bolt text-gold" style="margin-right: 8px;"></i> REGISTERED <span class="text-gold">DEVFORGE TEAMS</span>
           </h2>
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
             Live roster of registered squads competing in DevForge 2026.
@@ -820,7 +820,7 @@
         <div class="footer-grid">
           <div>
             <div class="brand-logo">
-              <div class="brand-icon">⚡</div>
+              <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
               <div class="brand-title">
                 DEVFORGE
                 <span class="brand-sub">NATIONAL CINETECH '26</span>
@@ -865,7 +865,7 @@
         <div class="footer-bottom">
           <div>© 2026 DevForge CineTech Hackathon (DevForge '26). All Rights Reserved.</div>
           <div style="font-family: var(--font-mono); color: var(--accent-gold);">
-            ARCHITECTED WITH PRECISION & PASSION ⚡
+            ARCHITECTED WITH PRECISION & PASSION <i class="fa-solid fa-bolt text-gold"></i>
           </div>
         </div>
       </div>
