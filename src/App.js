@@ -6,6 +6,7 @@ import BackgroundAudio from './components/BackgroundAudio';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Punchlines from './components/Punchlines';
 import Domains from './components/Domains';
 import Timeline from './components/Timeline';
 import Prizes from './components/Prizes';
@@ -36,6 +37,7 @@ function App() {
           <main>
             <Hero />
             <About />
+            <Punchlines />
             <Domains />
             <Timeline />
             <Prizes />

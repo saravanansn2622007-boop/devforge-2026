@@ -1,0 +1,450 @@
+/* Punchlines Section - Kollywood Dark & Gold Cinematic Theme */
+.punchlines-section {
+  padding: 100px 2rem;
+  background: linear-gradient(180deg, var(--kolly-black) 0%, var(--kolly-ink) 50%, var(--kolly-black) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.punchlines-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(193, 18, 31, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.punchlines-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.punchlines-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.punchlines-section .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--kolly-gold), var(--kolly-crimson));
+  color: var(--kolly-black);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.punchlines-section .section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.punchlines-section .section-title .text-gold {
+  background: linear-gradient(135deg, var(--kolly-gold-light) 0%, var(--kolly-gold) 50%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.punchlines-section .section-description {
+  font-size: 1.1rem;
+  color: var(--kolly-muted);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Punchlines Main Card */
+.punchline-main-card {
+  background: linear-gradient(180deg, rgba(26, 13, 17, 0.85) 0%, rgba(14, 7, 9, 0.95) 100%);
+  border: 1px solid var(--kolly-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.2);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.punchline-main-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 175, 55, 0.12);
+}
+
+/* Clapperboard Strip Header */
+.cinema-clapper-header {
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.clapper-stripes-pattern {
+  height: 12px;
+  background: repeating-linear-gradient(
+    45deg,
+    #D4AF37,
+    #D4AF37 14px,
+    #0E0709 14px,
+    #0E0709 28px
+  );
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.clapper-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.8rem;
+  color: var(--kolly-muted);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.clapper-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+
+.clapper-take-pill {
+  color: var(--kolly-gold);
+  border-color: rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* Hero Filter Tabs */
+.hero-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--kolly-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.hero-tab-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--kolly-gold);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.hero-tab-btn.active {
+  background: linear-gradient(135deg, var(--kolly-gold) 0%, #B8860B 100%);
+  color: #0E0709;
+  border-color: var(--kolly-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transform: scale(1.04);
+}
+
+.hero-tab-btn.active svg {
+  color: #0E0709 !important;
+}
+
+/* Theatre Screen Showcase Stage */
+.punchline-theatre-stage {
+  background: radial-gradient(circle at 50% 0%, rgba(59, 13, 18, 0.6) 0%, rgba(14, 7, 9, 0.95) 75%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  padding: 3rem 2rem 2.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 15px 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spotlight Beam Effect */
+.theatre-spotlight-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, rgba(193, 18, 31, 0.04) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Avatar Ring Spotlight */
+.hero-avatar-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3B0D12 0%, #1A0D11 100%);
+  border: 2px solid var(--kolly-gold);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.hero-avatar-ring:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.hero-avatar-ring svg {
+  color: var(--kolly-gold);
+}
+
+/* Equalizer Bars */
+.theatre-audio-equalizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 18px;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+}
+
+.theatre-audio-equalizer span {
+  width: 4px;
+  height: 4px;
+  background: var(--kolly-gold);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.theatre-audio-equalizer.active span {
+  animation: eqWave 0.75s ease-in-out infinite alternate;
+}
+
+.theatre-audio-equalizer.active span:nth-child(1) { animation-delay: 0.1s; }
+.theatre-audio-equalizer.active span:nth-child(2) { animation-delay: 0.3s; }
+.theatre-audio-equalizer.active span:nth-child(3) { animation-delay: 0.45s; }
+.theatre-audio-equalizer.active span:nth-child(4) { animation-delay: 0.2s; }
+.theatre-audio-equalizer.active span:nth-child(5) { animation-delay: 0.5s; }
+.theatre-audio-equalizer.active span:nth-child(6) { animation-delay: 0.15s; }
+.theatre-audio-equalizer.active span:nth-child(7) { animation-delay: 0.35s; }
+.theatre-audio-equalizer.active span:nth-child(8) { animation-delay: 0.25s; }
+
+@keyframes eqWave {
+  0% { height: 4px; opacity: 0.4; }
+  100% { height: 18px; opacity: 1; filter: drop-shadow(0 0 6px var(--kolly-gold)); }
+}
+
+/* Quote Typography */
+.theatre-quote-box {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.theatre-quote-wrapper {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.theatre-quote-mark {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--kolly-gold);
+  line-height: 1;
+  opacity: 0.8;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.theatre-quote-text {
+  font-family: 'Space Grotesk', 'Outfit', sans-serif;
+  font-size: clamp(1.25rem, 3.2vw, 1.85rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  margin: 0.5rem 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.theatre-speaker-attribution {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--kolly-muted);
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.speaker-hero-name {
+  color: var(--kolly-gold);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.speaker-movie {
+  color: #FFA500;
+  font-weight: 600;
+}
+
+.speaker-context {
+  color: var(--kolly-cream);
+  opacity: 0.8;
+}
+
+/* Interaction Controls */
+.punchline-action-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.punchline-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--kolly-gold-light) 0%, var(--kolly-gold) 50%, #B8860B 100%);
+  color: #0E0709;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.punchline-btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  filter: brightness(1.05);
+}
+
+.punchline-btn-primary:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.punchline-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--kolly-text);
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.punchline-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--kolly-gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Toast Message */
+.punchline-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1A0D11;
+  border: 1px solid var(--kolly-gold);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .punchlines-section {
+    padding: 70px 1rem;
+  }
+  
+  .punchline-main-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .theatre-spotlight-beam {
+    width: 180px;
+  }
+
+  .theatre-quote-text {
+    font-size: 1.25rem;
+  }
+
+  .punchline-action-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .punchline-btn-primary,
+  .punchline-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

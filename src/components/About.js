@@ -7,7 +7,7 @@ const About = () => {
   const features = [
     {
       icon: <Zap size={28} />,
-      title: '30 Hours Non-Stop',
+      title: '24 Hours Non-Stop',
       description: 'Intense coding marathon pushing boundaries of innovation and creativity',
     },
     {
@@ -70,7 +70,7 @@ const About = () => {
           <h2 className="section-title">What is DevForge 2K26?</h2>
           <p className="section-description">
             DevForge 2K26 is the ultimate hackathon experience designed to bring together
-            the brightest minds in technology. Over 30 hours of intense coding, collaboration,
+            the brightest minds in technology. Over 24 hours of intense coding, collaboration,
             and innovation await you.
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ const About = () => {
             <span className="stat-label">Participants</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">30</span>
+            <span className="stat-number">24</span>
             <span className="stat-label">Hours</span>
           </div>
           <div className="stat-item">
