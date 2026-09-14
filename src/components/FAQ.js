@@ -9,11 +9,11 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'Who can participate in DevForge 2K26?',
-      answer: 'DevForge 2K26 is open to all department students in kongu engineering college. You can participate 2 or in teams of up to 3 members.',
+      answer: 'DevForge 2K26 is open to all department students in Kongu Engineering College. You can participate in teams of 3 to 4 members.',
     },
     {
       question: 'What is the team size limit?',
-      answer: 'Teams can have a minimum of 1 and a maximum of 3 members. We encourage diverse teams with varied skill sets for the best experience.',
+      answer: 'The team size is 3 or 4 members per team.',
     },
     {
       question: 'Is there a registration fee?',

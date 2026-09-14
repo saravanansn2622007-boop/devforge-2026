@@ -152,15 +152,29 @@
 
 .tab-name {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--brown-800);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.tab-tagline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--domain-color);
+  margin-bottom: 0.4rem;
   transition: color 0.3s ease;
 }
 
 .domain-tab.active .tab-name {
   color: var(--white);
+}
+
+.domain-tab.active .tab-tagline {
+  color: var(--kolly-gold);
 }
 
 .tab-desc {
@@ -178,23 +192,61 @@
   color: var(--brown-200);
 }
 
-.tab-contact {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.tab-contacts-list {
   margin-top: 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--brown-700);
-  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.domain-tab.active .tab-contact {
+.contacts-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brown-600);
+}
+
+.domain-tab.active .contacts-heading {
+  color: var(--kolly-gold);
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--brown-800);
+}
+
+.domain-tab.active .contact-chip {
   color: var(--white);
 }
 
-.tab-contact svg {
-  flex-shrink: 0;
+.c-name {
+  font-weight: 600;
+}
+
+.c-phone {
+  color: var(--kolly-gold);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: rgba(212, 175, 55, 0.15);
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.2s ease;
+}
+
+.c-phone:hover {
+  background: var(--kolly-gold);
+  color: #0E0709;
 }
 
 .tab-arrow {

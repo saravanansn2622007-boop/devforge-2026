@@ -9,39 +9,55 @@ const Domains = () => {
 
   const domains = [
     {
-      code: 'ML',
-      icon: <Brain size={32} />,
-      name: 'Machine Learning',
-      contact: 'To be announced',
-      color: '#E8C36A',
-      description: 'Build intelligent systems that learn from data and solve real-world problems with AI and machine learning.',
-      problems: [],
-    },
-    {
-      code: 'FS',
-      icon: <Code2 size={32} />,
-      name: 'Full Stack & Cyber Security',
-      contact: 'To be announced',
-      color: '#C1121F',
-      description: 'Engineer complete web applications end to end while securing them against modern threats and vulnerabilities.',
-      problems: [],
-    },
-    {
-      code: 'MB',
-      icon: <Smartphone size={32} />,
-      name: 'Mobile Application',
-      contact: 'To be announced',
-      color: '#4A90D9',
-      description: 'Create innovative mobile applications that solve real-world problems and deliver exceptional user experiences.',
-      problems: [],
-    },
-    {
-      code: 'EN',
+      code: 'EX',
       icon: <Building2 size={32} />,
-      name: 'Enterprise Development',
-      contact: 'To be announced',
+      name: 'EnterpriseX',
+      tagline: 'Build. Scale. Deploy.',
+      contacts: [
+        { name: 'Mohan Raja', phone: '9003948329' },
+        { name: 'Sounderhari', phone: '9489669639' },
+      ],
       color: '#7C5CFF',
-      description: 'Design production-grade enterprise systems, from development through deployment, scaling, and operations.',
+      description: 'Design production-grade enterprise systems, scalable backend architectures, and high-performance cloud applications.',
+      problems: [],
+    },
+    {
+      code: 'CS',
+      icon: <Code2 size={32} />,
+      name: 'CyberStack',
+      tagline: 'Build. Secure. Defend.',
+      contacts: [
+        { name: 'Krithika S', phone: '6379962402' },
+        { name: 'Shehsanth', phone: '8072953989' },
+      ],
+      color: '#C1121F',
+      description: 'Engineer resilient full-stack web applications while fortifying systems against modern security threats and cyber vulnerabilities.',
+      problems: [],
+    },
+    {
+      code: 'IN',
+      icon: <Brain size={32} />,
+      name: 'Innovate',
+      tagline: 'Think. Learn. Create.',
+      contacts: [
+        { name: 'Shreya J', phone: '9842484828' },
+        { name: 'Arnald', phone: '' },
+      ],
+      color: '#E8C36A',
+      description: 'Harness Artificial Intelligence, Machine Learning algorithms, and creative problem-solving to build futuristic intelligent solutions.',
+      problems: [],
+    },
+    {
+      code: 'MX',
+      icon: <Smartphone size={32} />,
+      name: 'MobileX',
+      tagline: 'Mobile Application Development',
+      contacts: [
+        { name: 'Dharnish BM', phone: '9842375676' },
+        { name: 'Navaneethan', phone: '9342512455' },
+      ],
+      color: '#4A90D9',
+      description: 'Develop next-generation mobile applications for iOS & Android with intuitive interfaces and seamless cross-platform performance.',
       problems: [],
     },
   ];
@@ -95,10 +111,19 @@ const Domains = () => {
                 <div className="tab-icon">{domain.icon}</div>
                 <div className="tab-content">
                   <h3 className="tab-name">{domain.name}</h3>
+                  <div className="tab-tagline">{domain.tagline}</div>
                   <p className="tab-desc">{domain.description}</p>
-                  <p className="tab-contact">
-                    <Phone size={14} /> <span>{domain.contact}</span>
-                  </p>
+                  <div className="tab-contacts-list">
+                    <div className="contacts-heading">
+                      <Phone size={13} /> <span>Coordinators:</span>
+                    </div>
+                    {domain.contacts.map((c, i) => (
+                      <span key={i} className="contact-chip">
+                        <span className="c-name">{c.name}</span>
+                        {c.phone && <a href={`tel:${c.phone}`} className="c-phone">{c.phone}</a>}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <ChevronRight className="tab-arrow" size={20} />
               </motion.button>

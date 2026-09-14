@@ -10,6 +10,7 @@ import Punchlines from './components/Punchlines';
 import Domains from './components/Domains';
 import Timeline from './components/Timeline';
 import Prizes from './components/Prizes';
+import Register from './components/Register';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
@@ -41,6 +42,7 @@ function App() {
             <Domains />
             <Timeline />
             <Prizes />
+            <Register />
             <FAQ />
           </main>
           <Footer />

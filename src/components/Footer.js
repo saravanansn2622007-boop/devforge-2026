@@ -19,6 +19,13 @@ const Footer = () => {
     }
   };
 
+  const overallCoordinators = [
+    { name: 'Mohammed Yunus A', phone: '7010499316' },
+    { name: 'Shreya J', phone: '9842484828' },
+    { name: 'Mithik Karthikeyan', phone: '8220391947' },
+    { name: 'Mohan Raja', phone: '9003948329' },
+  ];
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -44,7 +51,6 @@ const Footer = () => {
             <p className="footer-tagline">
               The ultimate 24-hour hackathon experience where innovation meets creativity.
             </p>
-            
           </motion.div>
 
           <motion.div
@@ -79,21 +85,20 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4>Contact Us</h4>
-            <ul>
-              
-              <li>
-                <Phone size={18} />
-                <a href="tel:+917010499316">+91 70104 99316</a>
-              </li>
-              <li>
-                <MapPin size={18} />
-                <span>Kongu Engineering College,Perundurai</span>
-              </li>
+            <h4>Overall Coordinators</h4>
+            <ul className="coordinators-list">
+              {overallCoordinators.map((c, index) => (
+                <li key={index}>
+                  <span className="coord-name">{c.name}</span>
+                  <a href={`tel:${c.phone}`} className="coord-phone"><Phone size={14} /> {c.phone}</a>
+                </li>
+              ))}
             </ul>
+            <div className="venue-info">
+              <MapPin size={16} />
+              <span>Kongu Engineering College, Perundurai</span>
+            </div>
           </motion.div>
-
-          
         </div>
 
         <div className="footer-bottom">
